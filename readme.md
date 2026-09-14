@@ -35,7 +35,7 @@ The content of this repository is organized into several key components, each se
 
 The Master Extension Set itself is defined using Json templates and user-defined types specified in protobufs, which are then compiled into various platform-specific libraries for use in template instances.
 
-Deployment tools can be found in the [ECSSDK](https://github.com/marleygoxy/ecssdk) to be cloned.
+Deployment tools can be found in the [ECSSDK - ADD NEW PATH HERE](https://github.com/marleygoxy/ecssdk) to be cloned.
 
 The model types for other platforms can be found in [models](./src/models/), currently Javascript and TypeScript are support, please use Issues to request other platforms you need like Java, Go, etc.
 
@@ -48,14 +48,14 @@ Comprehensive documentation is available in the [docs](docs) directory:
 
 ### Verra CCS+ Modules
 
-- **VM0049 Carbon Capture Module** - CO2 capture monitoring
-- **VMD0056 Direct Air Capture (DAC) Module** - DAC-specific measurements  
-- **VMD0057 Transport Module** - CO2 transport tracking
-- **VMD0058 Storage Modules** - Geological storage monitoring
-- **VMD0059 Bioenergy with CCS (BECCS) Module** - BECCS operations
-- **VMD0062 CO2 Capture FROM Natural Gas Processing Module** - CO2 capture from natural gas processing
-- **VT0012 VT0012 Accounting Non-VCS CO2 in CCS Projects** -  Accounting Non-VCS CO2 in CCS Projects
-- **VT0013 VT0013 VT0013 Differentiating Reductions and Removals in CCS Projects, v1.0** - Differentiating Reductions and Removals in CCS Projects, v1.0
+- **VM0049 Carbon Capture Module**
+- **VMD0056 Direct Air Capture (DAC) Module**
+- **VMD0057 Transport Module**
+- **VMD0058 Storage Modules**
+- **VMD0059 Bioenergy with CCS (BECCS) Module**
+- **VMD0062 CO2 Capture FROM Natural Gas Processing Module**
+- **VT0012 Accounting Non-VCS CO2 in CCS Projects**
+- **VT0013 Differentiating Reductions and Removals in CCS Projects, v1.0**
 
 ## Requirements
 
