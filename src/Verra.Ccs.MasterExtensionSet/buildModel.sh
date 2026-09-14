@@ -3,8 +3,8 @@
 #requires protoc-gen-web be installed - https://github.com/grpc/grpc-web/releases 
 #For Go, install the go plugin: https://github.com/golang/protobuf
 #For ts, install the ts plugin: https://github.com/improbable-eng/ts-protoc-gen
-PROTO_PATH="${PROTO_PATH:-../../../../.nuget/packages/google.protobuf.tools/3.36.1/tools}"
-PROTOC_GEN_TS_PATH="../../../../node_modules/ts-protoc-gen/bin/protoc-gen-ts"
+PROTO_PATH="${PROTO_PATH:-../../../../../.nuget/packages/google.protobuf.tools/3.36.1/tools}"
+PROTOC_GEN_TS_PATH="../../../../../node_modules/ts-protoc-gen/bin/protoc-gen-ts"
 JS_OUT_DIR="../models/ts"
 echo "paths:"
 echo "$PROTO_PATH"

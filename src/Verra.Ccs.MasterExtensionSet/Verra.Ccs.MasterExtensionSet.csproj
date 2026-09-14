@@ -19,7 +19,7 @@
       <None Update="MasterFormulaTemplates.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="MasterMessagePairs.json">
+      <None Update="MasterMessagePairTemplates.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="MasterVariableTemplates.json">
