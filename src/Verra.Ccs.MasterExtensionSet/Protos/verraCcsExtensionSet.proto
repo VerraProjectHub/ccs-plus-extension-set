@@ -1,0 +1,509 @@
+syntax = "proto3";
+
+package verra.ccs.extensionSet;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "Verra.Ccs.ExtensionSet";
+option java_package = "verra.ccs.extensionSet";
+option java_multiple_files = true;
+
+
+//SECTION Entity extensions
+// Claim Source extension 
+//General device metadata used for Claim Source Entity Extension
+message DeviceMetadata {
+  string model = 1;
+  string manufacturer = 2;
+  string serial_number = 3;
+  string firmware_version = 4;
+  string installation_date = 5;
+  string calibration_date = 6;
+  string calibration_expiration_date = 7;
+  int32 calibration_frequency_in_months = 8;
+  string calibration_standard = 9;
+  string accuracy = 10;
+  repeated CalibrationResult calibration_results = 11;
+}
+
+//SECTION CCS+ Variables
+//Mass flow rate by mass by mass flow meter x, FR_(mass,x)
+message FlowRateByMassVariable{
+  string claim_source_id = 1;
+  repeated Measurement measurements = 3;
+}
+
+//To used for sending multiple measurements in one message
+message Measurements{
+  repeated Measurement measurement = 1;
+}
+
+//report a single measurement from a source: sensor, instrument, etc., use a repeated Measurements message to send multiple measurements or the Measurements message.
+message Measurement {
+  google.protobuf.Timestamp measure_time = 1;
+  string tag_id = 2; //maps to ClaimSource.external_id
+  string facility_name = 3;
+  double measure_value = 4;
+  string u_o_m = 5; //unit of measure
+}
+
+enum FuelType{
+  UNKNOWN = 0;
+  NATURAL_GAS = 1;
+  DIESEL = 2;
+  GASOLINE = 3;
+  COAL = 4;
+  BIOMASS = 5;
+  BRINE_GAS = 6;
+  ELECTRICITY = 7;
+  KOH = 8; //potassium hydroxide
+  CaCO3 = 9; //calcium carbonate
+  CaO = 10; //calcium oxide
+  OTHER = 50;
+}
+
+
+//Simple double value with unit of measure
+message DoubleValue{
+  double value = 1;
+  string u_o_m = 2;
+}
+
+//Simple integer value with unit of measure
+message IntegerValue{
+  int32 value = 1;
+  string u_o_m = 2;
+}
+
+//QnonVCSCO2Injected - Quantity of non-VCS CO2 injected into the storage reservoir, Qnon-VCS-CO2-injected
+message QuantityOfNonVcsCo2Injected{
+  string injection_point = 1; //name of the injection point
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+message QuantityOfCaptureMaterial{
+  FuelType capture_material = 1; //name of the capture material
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+message FlowMeterReading{
+  string flow_meter = 1; //name of the flow meter
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+message ComponentMass{
+  string component = 1; //name of the component
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+message ComponentMoleFraction{
+  string component = 1; //name of the component
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+  string flow_meter = 4; //name of the flow meter associated with this mole fraction measurement
+}
+
+//Leakage information
+message TransportFuelLeakage{
+  string transport_leg = 1; //i.e., truck, rail, ship, etc.
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+//Leakage in storage
+message TransportStorageFuelLeakage{
+  string storage = 1; //i.e., truck, rail, ship, etc.
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+//leakage of electricity for intermediate storage
+message TransportStorageElectricityLeakage{
+  string storage = 1; //i.e., truck, rail, ship, etc.
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+//Leakage information for transport 
+message TransportElectricityLeakage{
+  string transport_leg = 1; //i.e., truck, rail, ship, etc.
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+//Leakage in storage
+message StorageLeakage{
+  string storage = 1; 
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+//Leak event
+message LeakEvent{
+  string event_name = 1;
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+message VentingEvent{
+  string event_name = 1;
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+message PressurizedTimeComponent{
+  string component = 1; //name of the component
+  int32 duration_in_hours = 2; //duration in hours for the component
+  string u_o_m = 3; //unit of measure for pressure
+}
+
+message PressurizedPipelineTime{
+  string pipeline = 1; //name of the component
+  int32 duration_in_hours = 2; //duration in hours for the component
+  string u_o_m = 3; //unit of measure for pressure
+}
+
+message DischargeEvent{
+  string discharge_name = 1;
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+}
+
+//Standard Temperature and Pressure (STP) value
+message StpValue{
+  DoubleValue temperature = 1; //in degrees K
+  DoubleValue pressure = 2; //in atm or kPa
+}
+
+message FuelTypeValue{
+  FuelType fuel_type = 1; //name of the heat storage
+  double value = 2; //in tCO2e
+  string u_o_m = 3; //unit of measure
+  string transport_or_storage_name = 4;
+}
+
+//Quantity of fuel type d, from utility bill, used in capture facility or third party in the year y - (need to know the fuel type from the utility bill)
+message QuantityOfFuelVariable{
+  string tag_id = 1; //map to source tag id
+  FuelType fuel_type = 2; //i.e., natural gas, diesel, etc.
+  Invoice invoice = 3;
+}
+
+//Quantity of fuel type d, Qfueldy)
+message QFuel{
+  FuelType fuel_type = 1; //i.e., natural gas, diesel, etc.
+  double quantity = 2; //quantity of fuel used during the monitoring period
+  string u_o_m = 3; //unit of measure
+  string transport_or_storage_name = 4;
+}
+
+//Efficiency of fuel type d, from utility bill, used in capture facility or third party in the year y - (need to know the fuel type from the utility bill)
+message NHeatOrElec{
+  FuelType fuel_type = 1; //i.e., natural gas, diesel, etc.
+  double value = 2; //quantity of fuel used during the monitoring period
+  string u_o_m = 3; //unit of measure
+  string transport_or_storage_name = 4; //name of transport leg or storage associated with this efficiency value, if applicable
+}
+
+
+message QElectricity{
+  FuelType fuel_type = 1; //i.e., natural gas, diesel, etc.
+  double value = 2; //quantity of fuel used during the monitoring period
+  string u_o_m = 3; //unit of measure
+  string transport_or_storage_name = 4;
+}
+
+//Used for time tracking of components in a capture facility
+message ComponentTime{
+  string component = 1; //name of the component
+  int32 duration_in_hours = 2; //duration in hours for the component
+}
+
+message ComponentEvent{
+  string component = 1; //name of the component
+  string event_name = 2; //name of the venting event
+  double value = 3; //value associated with the event, e.g., tCO2e for a leak event
+  string u_o_m = 4; //unit of measure for the value}
+}
+
+//The Invoice type and nested MonthlyMeasurement is for a claim source file in a checkpoint
+message Invoice {
+  string tag_id = 1; //map to source tag id
+  string description = 2;
+  string from_date = 3;
+  string to_date = 4;
+  MonthlyMeasurement measurement = 5;
+  bytes invoice_pdf = 6;
+}
+
+message MonthlyMeasurement {
+  string measure_time = 1; //in dd/MM/yyyy format
+  string tag_id = 2; //corresponds to the instrument or sensor id
+  string facility_name = 3;
+  double measure_value = 4;
+  string u_o_m = 5; //unit of measure
+}
+
+enum EmissionType{
+  EMISSION_TYPE_UNKNOWN = 0;
+  CO2 = 1; //Carbon Dioxide
+  CH4 = 2; //Methane
+  N2O = 3; //Nitrous Oxide
+  
+}
+
+//Typically used for emissions factors from EPA, IPCC, etc.
+message EmissionFactor {
+  EmissionType emission_type = 1; //the type of emission
+  FuelType fuel_type = 2; //i.e., natural gas, diesel, etc.
+  string version = 3; //the version of the emission factor, e.g., 2024
+  DoubleValue value = 4; //the emission factor value
+}
+
+
+//SECTION: Message Pairs
+
+//part of a message pair
+message CalibrateInstrumentRequest {
+  string claim_id = 1;
+  string checkpoint_id = 2;
+  string claim_source_id = 3;
+}
+
+//part of a message pair
+message CalibrateInstrumentResponse {
+  string claim_id = 1;
+  string checkpoint_id = 2;
+  string claim_source_id = 3;
+  CalibrationResult calibration_data = 4;
+}
+
+//sent as part of a CalibrateInstrumentResponse
+message CalibrationResult {
+  google.protobuf.Timestamp calibration_timestamp = 1;
+  double percentage_accuracy = 2; //percentage
+  google.protobuf.Any calibration_data = 3; //define the calibration data for the different kinds of instruments
+}
+
+//Instrument calibration data types
+message CoriolisMeterCalibrationData {
+  double zero_flow_offset = 1;
+  double span = 2;
+  double zero_flow_offset_u_o_m = 3;
+  double span_u_o_m = 4;
+}
+
+//SECTION VERIFICATION EXCEPTIONS - MessagePair
+//used to report exceptions found during verification of variables and formulas
+
+enum VerificationExceptionType{
+  LEDGER_VARIABLE = 0;
+  DATA_PACKAGE_VARIABLE = 1;
+}
+
+message CheckpointNonConformanceException{
+  VerificationExceptionType exception_type = 1;
+  string variable_id = 2; //id of the variable with the exception
+  string claim_source_id = 3; //id of the claim source with the exception
+  string proposed_verified_value = 4;
+  string description = 5; //description of the exception
+}
+
+message CheckpointNonConformanceExceptionMitigation{
+  string variable_id = 1;
+  string claim_source_id = 2;
+  string adjusted_value = 3;//id of the verification
+  string description = 4; //description of the mitigation
+}
+
+message CheckpointNonConformanceRequest{
+  string checkpoint_id = 1;
+  repeated CheckpointNonConformanceException exceptions = 2;
+}
+
+message CheckpointNonConformanceMitigationResponse{
+  string checkpoint_id = 1;
+  repeated CheckpointNonConformanceExceptionMitigation mitigations = 2;
+}
+
+
+//message definitions for CalculateErr errors
+message CalculateFailErrorsRequest{
+  string processed_claim_id = 1;
+  string monitoring_report_id = 2;
+  string data_type = 3; //the object type if you want to deserialize the json Verra.Ccs.Reporting.Model.Api.Responses.CalculateErrResponse
+  string json_data = 4; //the contents of the json data for the error response, e.g., Verra.Ccs.Reporting.Model.Api.Responses.CalculateErrResponse
+  string comment = 5;
+}
+
+message CalculateFailErrorsResponse{
+  string processed_claim_id = 1;
+  string monitoring_report_id = 2;
+  repeated VariableAdjusted variables_adjusted = 3;
+  string comment = 4;
+}
+
+message VariableAdjusted{
+  string checkpoint_variable_id = 1;
+  string template_id = 2;
+  string template_version = 3;
+  string updated_value = 4;
+  string comment = 5;
+}
+
+//message for CalculationSucceedAdjustments
+message CalculationSucceedAdjustmentRequest{
+  string processed_claim_id = 1;
+  string monitoring_report_id = 2;
+  double supplier_calculated_quantity = 3;
+  double registry_calculated_quantity = 4;
+  int32 percent_margin_of_error_setting = 5;
+  string comment = 6;
+}
+
+message CalculationSucceedAdjustmentResponse{
+  string processed_claim_id = 1;
+  string monitoring_report_id = 2;
+  repeated VariableAdjusted variables_adjusted = 3;
+  string comment = 4;
+}
+
+//message for VerificationReportInitialization
+message VerificationReportInitializedRequest{
+  string processed_claim_id = 1;
+  string monitoring_Report_id = 2;
+  string comment = 3;
+}
+
+message VerificationReportInitializedResponse{
+  string processed_claim_id = 1;
+  string monitoring_Report_id = 2;
+  string comment = 3;
+}
+
+
+//VERRA Types for CCS+ Extension Set
+//Verra options start with 1, so the default value of 0 can be used to indicate "not set".
+enum CO2MeasurementOption{
+  NOT_APPLICABLE = 0; //CO2 measurement does not apply.
+  MASS_FLOW = 1; //Measurement of total mass flow rate of the captured gas stream and CO2 concentration.
+  VOLUMETRIC_FLOW = 2; //Measurement of total volumetric flow rate of the captured gas stream and CO2 concentration.
+  BOTH_MASS_AND_VOLUMETRIC_FLOW = 3; //If set for a variable, it is used in both mass flow and volumetric flow measurement methods. e.g., Xk, XCO2
+}
+
+//Verra options start with 1, so the default value of 0 can be used to indicate "not set".
+enum IntentionalDischargeMeasurementApproach{
+  IS_NOT_APPLICABLE = 0; //Intentional discharge does not apply.
+  MEASUREMENT_OF_VENTING = 1; //Measurement of CO2 in the vented gas stream.
+  ESTIMATION_OF_SURFACE_VENTING_FOR_ISOLATED_VOLUMES = 2; //Where any part of an isolated section of pipe is downstream of the mandatory monitoring point and is depressurized, project proponents must estimate the vented mass of CO2 using the volume of the isolated pipe.
+  ESTIMATION_OF_SURFACE_VENTING_FOR_NON_ISOLATED_VOLUMES = 3; //Estimation of CO2 in the vented gas stream using a mass balance approach, where the volume of the isolated pipe cannot be determined or the venting event was from a non-isolated and flowing pipe.
+}
+
+enum EmissionSourceForUnintentionalSurfaceDischarge{
+  DOESNT_APPLY = 0; //Unintentional surface discharge does not apply.
+  FUGITIVE_EMISSIONS = 1; //Use fugitive emissions as the emission source for unintentional discharge.
+  RUPTURE_OR_LINE_BREAK = 2; //Use rupture or line break as the emission source for unintentional discharge.
+  BOTH = 3; //Use both fugitive emissions and rupture or line break as the emission source for unintentional discharge.
+}
+
+//Verra options start with 1, so the default value of 0 can be used to indicate "not set".
+enum CalculatingLeakageFromBiomassCultivationOptions
+{
+  NOT_USED = 0; //Leakage emissions from cultivation are not applicable.
+  DEFAULT_VALUE = 1; //Use a default value to calculate leakage emissions from cultivation.
+  EMBODIED_EMISSIONS_FACTOR = 2; //Use an embodied emissions factor, determined through a life cycle assessment (LCA) to calculate leakage emissions from cultivation.
+  CALCULATE_LEAKAGE_EMISSIONS = 3; //Calculate leakage emissions from cultivation based on the type and amount of biomass cultivated.
+}
+
+//Verra options start with 1, so the default value of 0 can be used to indicate "not set".
+enum AllocateProjectAndLeakageEmissionOptions{
+  DOES_NOT_APPLY = 0; //Use a default value to allocate project and leakage emissions.
+  DIFFERENTIATION_METHOD = 1; //Use the differentiation method to allocate project and leakage emissions.
+  MASS_BALANCE_METHOD = 2; //Use the mass balance method to allocate project and leakage emissions.
+}
+
+//SECTION CCS+ Module Options
+message VM0049Options{
+  CO2MeasurementOption co2_measurement_option = 1; //Option for measuring CO2 in the captured gas stream
+  bool IsMassFractionOfCo2Available = 2; //Indicates if mass fraction of CO2 in the captured gas stream is available
+}
+
+message VMD0056Options{
+  bool uses_fossil_fuels = 1; //Indicates if the capture facility or third party uses fossil fuels in the capture process.
+}
+
+message VMD0057Options{
+  bool uses_fossil_fuels = 1; //Indicates if the capture facility or third party uses fossil fuels in the transport process.
+  bool direct_monitoring = 2; //Indicates if direct monitoring of CO2 transport is used, will use default values if false.
+}
+
+message VMD0058Options{
+  IntentionalDischargeMeasurementApproach intentional_discharge_measurement_approach = 1; //Option for measuring intentional CO2 discharged gas stream
+  CO2MeasurementOption intentional_surface_discharge_measurement_option = 2; //Option for measuring CO2 in the intentionally discharged gas stream surface
+  CO2MeasurementOption intentional_subsurface_discharge_measurement_option = 3; //Option for measuring CO2 in the intentionally discharged gas stream subsurface
+  EmissionSourceForUnintentionalSurfaceDischarge unintentional_surface_discharge_emission_source = 4; //Option for determining the emission source for unintentional surface discharge
+}
+
+message VMD0059Options{
+  CalculatingLeakageFromBiomassCultivationOptions calculating_leakage_from_biomass_cultivation_options = 1; //Option for calculating leakage emissions from biomass cultivation
+}
+
+message VT0013Options{
+  AllocateProjectAndLeakageEmissionOptions allocate_project_and_leakage_emission_options = 1; //Option for allocating project and leakage emissions
+}
+
+//SECTION Variable Options
+
+message VariableTemplateOptions{
+  CO2MeasurementOption applies_for_co2_measurement_type = 1; //Option for measuring CO2 in the captured gas stream
+  bool applies_for_fossil_fuel_use = 2; //Indicates if the capture facility or third party uses fossil fuels in the capture process.
+  bool transport_direct_monitoring = 3; //Indicates if direct monitoring of CO2 transport is used, will use default values if false.
+  IntentionalDischargeMeasurementApproach storage_intentional_discharge_measurement_approach = 4; //Option for measuring CO2 in the surface discharged gas stream
+  CO2MeasurementOption storage_surface_intentional_discharge_measurement = 5; //Option for measuring CO2 in the intentionally discharged gas stream
+  CO2MeasurementOption storage_subsurface_intentional_discharge_measurement = 6; //Option for measuring CO2 in the intentionally discharged gas stream
+  EmissionSourceForUnintentionalSurfaceDischarge storage_unintentional_surface_discharge_emission_source =7; //Option for determining the emission source for unintentional surface discharge
+  CalculatingLeakageFromBiomassCultivationOptions beccs_biomass_cultivation_leakage_calculation = 8; //Option for calculating leakage emissions from biomass cultivation in BECCS projects
+  AllocateProjectAndLeakageEmissionOptions vt0013_allocate_project_and_leakage_emissions = 9; //Option for allocating project and leakage emissions in storage projects
+}
+
+message VerraProject{
+  string id = 1;
+  string project_number = 2;
+  string project_id = 3;
+  string account_id = 4;
+  repeated string project_proponents = 5;
+  string standard_template = 6;
+  string standard_template_name = 7;
+  string methodology_template_title = 8;
+  string methodology_template = 9;
+  string monitoring_report_name = 10;
+  string submission_status = 11;
+  string project_name = 12;
+  bool fetch_project_boundary_from_calculation_input = 13;
+  string estimated_project_start_date = 14;
+  repeated ProjectLocation locations = 15;
+}
+
+message ProjectLocation {
+  string project_instance = 1;
+  string country = 2;
+  string city = 3;
+  string state_province = 4;
+  string latitude_d_d = 5;
+  string longitude_d_d = 6;
+  string latitude_d_m_s = 7;
+  string longitude_d_m_s = 8;
+  string acres_hectares = 9;
+  string area_unit = 10;
+}
+
+message VerraRegistryAgentConfiguration{
+  int32 threshold_for_margin_of_difference = 1; //used to determine the acceptable margin of difference between Verra calculated results and supplier's.
+  string client_id = 2;
+  string scope = 3;
+  string call_back_url = 4;
+}

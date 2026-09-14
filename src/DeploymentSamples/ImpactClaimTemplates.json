@@ -1,0 +1,46 @@
+{
+  "impactClaimTemplates":[
+    {
+        "name": "Default Monthly Impact Claim Template",
+        "description": "Default monthly impact claim template.",
+        "masterFormulaTemplates": [
+          "fa0cd3db-f7a1-4de8-b211-fe963838cd87",
+          "5415a359-ca29-427b-88cd-a5d02f1e91d4",
+          "7c90069b-911a-4604-9b80-0a907c8d8c84",
+          "4b060e44-3a30-4e2d-8fce-9758c1db4839",
+          "b1c6d9b3-d971-4488-8f8b-5b5bbabd0f43",
+          "9e92b3a7-f779-41c6-b5c6-ca6e640b578f",
+          "f3582ac4-bdac-49f9-894a-c67d18662aa4",
+          "7e1f6199-1f67-4432-a576-46dbe2fbd69d",
+          "bec5764a-7bf1-420f-be90-6eff6f32332b",
+          "1b2d3639-ea88-40c8-8290-b6298750cddd",
+          "27a1a799-6c3b-40e4-bd0b-e249a4177f6f",
+          "7ef9de1e-7246-4d8b-848c-4cbbf7b482fd",
+          "dad9694e-e4be-485b-92e9-b2648d2d0ea7",
+          "55ca76e0-15eb-402e-a5fc-e1597ead411d",
+          "270814e4-c226-4011-b451-c5788a8c5cb9",
+          "fb08195a-457e-4691-9bf4-1700a159b805",
+          "f9bb238a-0535-4aae-8fb6-b742d1f681e1",
+          "d83ebf7e-0a05-4e0d-bece-ede313806a89",
+          "69dfbca7-8423-4236-87c9-90ace09118a5",
+          "99854543-a093-4266-b796-f8a5722a7662",
+          "e2441631-816d-4ae2-8c14-d05d4ab8fbc6",
+          "13424306-ed79-478a-b274-5eb26e8f6648",
+          "aefe5405-a5be-4f6a-940b-4d285eeaaf12",
+          "88443801-6b7e-4ac0-81d6-4a9a79c11218",
+          "099d5b5f-8e33-4aad-a341-9b713325d420",
+          "12a8707f-f2b9-4e3e-8639-0c077e70cab1",
+          "4c542c09-9648-4c73-b5ee-453ccf92a42c",
+          "22325e79-91ea-4fa6-9b5c-12f71f4b8a33",
+          "a2f01691-182e-4731-a854-f1bd42f4a6b1",
+          "2cbba306-b07f-4795-aa59-fc71966c073f",
+          "69d1c30f-b91d-4cd7-8a44-9758ade1c781",
+          "de1393b3-61f6-4616-b96f-16a79bdfbdce",
+          "a17ad881-93ff-4a32-bda2-f02f07c7e899",
+          "0570547e-9f81-40f1-8360-f0b0ff371192",
+          "5c48a5f1-b9f2-4c4c-957e-f0dccb3828af",
+          "940a7b31-77f9-4f4c-b7cd-7d2a28ceaab6"
+        ]
+    }
+  ]
+}

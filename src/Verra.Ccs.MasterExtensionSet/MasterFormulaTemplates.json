@@ -1,0 +1,2960 @@
+{
+  "masterFormulaTemplates": [
+    {
+      "id": "fa0cd3db-f7a1-4de8-b211-fe963838cd87",
+      "name": "VM0049 Carbon Capture and Storage - Carbon Dioxide Removal",
+      "description": "This template is used to calculate the net carbon dioxide removal (CDR) from the atmosphere by a carbon capture and storage (CCS) project, discount factor for conservativeness calculated in Equation 19%.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "ERy = (BEy - PEy - LEy) x (1 - DF)",
+      "masterVariableTemplates": [
+        {
+          "id": "BEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "PEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "LEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "DF",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "5415a359-ca29-427b-88cd-a5d02f1e91d4",
+      "name": "VM0049 Baseline Emissions - Equation 1",
+      "description": "Baseline emissions in year y (tCO2e) = Mass of CO2 injected (tCO2) and monitored at injection point i in year y at the storage site(s) minus the QCO2,nonVCS,injected.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "BEy = Σ_i QCO2,injected,i,y - Σ_i QCO2,nonVCS,injected,i,y",
+      "masterVariableTemplates": [
+        {
+          "id": "QCO2injectediy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "QCO2nonVCSinjectediy",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "7c90069b-911a-4604-9b80-0a907c8d8c84",
+      "name": "VM0049 Measurement based on Total Mass Flow. Equation 1, option 1 - Equation 2",
+      "description": "To determine the quantity of CO2 using total mass flow measurements, the project proponent must multiply the total mass flow by the concentration of CO2 in that flow.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QCO2,x = FRmass,x * %CO2mass,x",
+      "masterVariableTemplates": [
+        {
+          "id": "FRmassx",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "%CO2massx",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049",
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "4b060e44-3a30-4e2d-8fce-9758c1db4839",
+      "name": "VM0049 Derive Mass fraction from the mole fraction (XCO2) measured - Equation 3.",
+      "description": "M_CO2 = Molar mass of CO2 (g/mol), X_CO2 = Mole fraction of CO2 in flow at flow meter x (% mole), M_k = Molar mass of component k (g/mol), X_k = Mole fraction of component k in flow at flow meter x (% mole), n = Number of components in the mixture with a mole fraction greater than 0.5% (5000 ppm), or for supercritical conditions greater than 0.25% (2500 ppm)",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.modules.vm0049.Formula3PercentCo2Mass",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "%CO2mass,x = MCO2 * XCO2 / Σ Mk * Xk",
+      "masterVariableTemplates": [
+        {
+          "id": "MCO2",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "XCO2",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "Mk",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "Xk",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "57907ca0-9aef-48a8-a24a-1691713c46f9",
+      "name": "VM0049 Measurement based on Total Volumetric Flow - Equation 4, option 2 related to Equation 1",
+      "description": "A measured total volumetric flow and corresponding density may be used to determine the CO2 mass for a project activity.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QCO2,x = FRvol,x(STP) * %CO2vol,x(STP) * pCO2x(STP)",
+      "masterVariableTemplates": [
+        {
+          "id": "FRvolxSTP",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "%CO2volxSTP",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "pCO2xSTP",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "65137cf8-5c84-4610-ac73-bca1d8402c20",
+      "name": "VM0049 Derive Volume fraction from the mole fraction (XCO2) measured - Equation 5.",
+      "description": "Volumetric CO2 fraction must be derived from the mole fraction (XCO2) measured by sampling and evaluated at STP.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "%CO2vol,x(STP) = Xco2 /Σ_n,k=1 Xk",
+      "masterVariableTemplates": [
+        {
+          "id": "XCO2",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "Xk",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "06f6a2a3-b35c-4d8b-be49-731486f308cb",
+      "name": "VM0049 Derive Volume of CO2 at Standard Temperature and Pressure (STP) - Equation 6.",
+      "description": "Using the operating temperature and pressure, the actual volume of CO2 is converted into STP conditions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "FRvol,x(STP) = FRvol,x(P,T) * pCO2x(P,T) / pCO2x(STP)",
+      "masterVariableTemplates": [
+        {
+          "id": "FRvolxPT",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "pCO2xPT",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "pCO2xSTP",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "b1c6d9b3-d971-4488-8f8b-5b5bbabd0f43",
+      "name": "VM0049 Project Emissions, Equation 7",
+      "description": "The overarching equation for project emissions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEy = Σ_c PECap,c,y + Σ_t PETra,t,y + Σ_s PESto,s,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECapcy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "PETraty",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "PEStosy",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "9e92b3a7-f779-41c6-b5c6-ca6e640b578f",
+      "name": "VM0049 Leakage Emissions, Equation 8",
+      "description": "The overall leakage emissions equation includes terms for the project capture, transport, and sequestration activities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEy = Σ_c LECap,c,y + Σ_t LETra,t,y + Σ_s LESto,s,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LECapcy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "LETraty",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "LEStosy",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "f3582ac4-bdac-49f9-894a-c67d18662aa4",
+      "name": "VM0049 Reductions or removals are generally calculated as per Equation 9.",
+      "description": "Project reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "ERy = (BEy - PEy - LEy) * (1 - DF)",
+      "masterVariableTemplates": [
+        {
+          "id": "BEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "PEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "LEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "DF",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "7e1f6199-1f67-4432-a576-46dbe2fbd69d",
+      "name": "VM0049 Equation 10, Projects that achieve both reductions and removals must use the most recent version of the VT00XX Differentiating Reductions and Removals, in these cases Equation 9 is replaced by Equations 10, 11 and 12.",
+      "description": "Project reductions and removals for projects that achieve both reductions and removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "ERy = ERCAPR,y + ERCAPE,y",
+      "masterVariableTemplates": [
+        {
+          "id": "ERCAPRy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "ERCAPEy",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "d6a58804-b78f-4caf-b58c-fd790d6eaa4a",
+      "name": "VM0049 Equation 11, Projects that achieve both reductions and removals must use the most recent version of the VT00XX Differentiating Reductions and Removals, in these cases Equation 9 is replaced by Equations 10, 11 and 12.",
+      "description": "Project reductions and removals for projects that achieve both reductions and removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "ERCAPE,y = (BECAPR,y - Σ_g PECAPR,g,y - Σ_g LECAPR,g,y) * (1 - DF)",
+      "masterVariableTemplates": [
+        {
+          "id": "BECAPRy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "PECAPRgy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "LECAPRgy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "DF",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "8c635664-63bf-4c8c-ac7e-b547696511a1",
+      "name": "VM0049 Equation 12, Projects that achieve both reductions and removals must use the most recent version of the VT00XX Differentiating Reductions and Removals, in these cases Equation 9 is replaced by Equations 10, 11 and 12.",
+      "description": "Project reductions and removals for projects that achieve both reductions and removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "ERCAPE,y = (BECAPE,y - Σ_g PECAPE,g,y - Σ_g LECAPE,g,y) * (1 - DF)",
+      "masterVariableTemplates": [
+        {
+          "id": "BECAPEy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "PECAPEgy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "LECAPEgy",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "DF",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "bec5764a-7bf1-420f-be90-6eff6f32332b",
+      "name": "VM0049 Calculation of Discount Factor (DF)",
+      "description": "The project proponent must apply a discount factor to the calculated net reductions and removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "DF = Uoverall / ta=10% * ta=66.6%",
+      "masterVariableTemplates": [
+        {
+          "id": "Uoverall",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "tAlpha10",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "tAlpha66",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "1b2d3639-ea88-40c8-8290-b6298750cddd",
+      "name": "VMD0056 Project Emissions from DAC activities - Equation 1.",
+      "description": "Project emissions from DAC activities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECap,y = PECombFuel,y + PEFuel_FV,y + PEElec,y - PEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECombFuely",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PEFuelFVy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "PEElecy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "PEnonVCSCO2y",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "27a1a799-6c3b-40e4-bd0b-e249a4177f6f",
+      "name": "VMD0056 Project Emissions from Fossil Fuel Combustion - Equation 2.",
+      "description": "Project emissions from fossil fuel combustion for mobile equipment, flaring, and power and heat generation.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECombFuel,y = Σ_d (QFuel,d,y on-site * EFFuel,CO2,d) + Σ_d (QFuel,d,y on-site * EFFuel,CH4,d) * GWPCH4 + Σ_d (QFuel,d,y on-site * EFFuel,N2O,d) * GWPN2O",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "EFFuelCO2d",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "EFFuelCH4d",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "EFFuelN2Od",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "GWPN2O",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "7ef9de1e-7246-4d8b-848c-4cbbf7b482fd",
+      "name": "VMD0056 Off-site Fuel Consumption - Equation 3.",
+      "description": "The quantity of power or heat supplied from a directly connected off-site facility.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (HeatDAC,y / nHeat,y + ElectricityDAC,y / nElec,y) / (HeatCogen,y / nHeat,y + ElectricityCogen,y / nElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "HeatDACy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "ElectricityDACy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "dad9694e-e4be-485b-92e9-b2648d2d0ea7",
+      "name": "VMD0056 Fugitive and Venting Emissions from On-site Fuel Use - Equation 4.",
+      "description": "DAC projects using natural gas on-site must quantify fugitive and venting emissions during facility operations. Quantification is based on component counts and respective emission factors, fugitive emissions are quantified following the approach in the US Environmental Protection Agency's Electronic Code of Federal Regulations, Title 40, Part 98, Subpart W, § 98.233 (r).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEFuel_FV,y = (∑_n Countn,y * EFn * Tn,y * 0.001 + ∑_m Vm) * GWPCH4",
+      "masterVariableTemplates": [
+        {
+          "id": "Countny",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "EFn",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "Tny",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "Vm",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "55ca76e0-15eb-402e-a5fc-e1597ead411d",
+      "name": "VMD0056 Leakage Emissions from CO2 Capture - Equation 5.",
+      "description": "The calculation of project emissions from DAC activities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECap,y = LEFuel,y + LEElec,y + LEMat,y + LEBiomass,y - LEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEFuely",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "LEElecy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "LEMaty",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "LEBiomassy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "LEnonVCSCO2y",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "270814e4-c226-4011-b451-c5788a8c5cb9",
+      "name": "VMD0056 Leakage Emissions from Fuel Consumption - Equation 6.",
+      "description": "Upstream emissions from the production and transportation of fuel to the DAC site and directly connected off-site facilities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEFuel,y = QFuel,d,y on-site * EFUpstream_Fuel,d",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "EFUpstreamFueld",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "fb08195a-457e-4691-9bf4-1700a159b805",
+      "name": "VMD0056 Leakage Emissions from Consumption of Capture Materials. Equation 7.",
+      "description": "Capture materials are the chemicals and media used by a DAC process to capture atmospheric CO2.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEMat,y = ∑_j (QMat,j,y * EFj) ",
+      "masterVariableTemplates": [
+        {
+          "id": "QMatjy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "EFj",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "a17ad881-93ff-4a32-bda2-f02f07c7e899",
+      "name": "Calculation of QFuel,d,y off-site quantities for DAC VMD0056.",
+      "description": "Quantity of fuel type used to operate on-site and/ off-site equipment in year y.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (HeatDAC,y / ηHeat,y + ElectricityDAC,y / ηElec,y) / (HeatCogen,y / ηHeat,y + ElectricityCogen,y / ηElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "HeatDACy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "ElectricityDACy",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "f9bb238a-0535-4aae-8fb6-b742d1f681e1",
+      "name": "VMD0057 Quantification of Project Emissions - Equation 1.",
+      "description": "Total project emissions of the transported CO2.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PETra,y = ∑_r PETra,r,y + ∑_f PETra,f,y - PEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PETrary",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PETrafy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PEnonVCSCO2y",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "ee36e9ac-8755-422b-a12c-fdce98031f96",
+      "name": "VMD0057 Quantification of Project Emissions Option A: Direct Monitoring - Equation 2.",
+      "description": "Project emissions associated with a transport leg or an intermediate storage site are calculated.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PETra,r,y or PETra,f,y = PECombFuel,y + PEFuel_FV,y + PEElec,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECombFuely",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PEFuelFVy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PEElecy",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "d83ebf7e-0a05-4e0d-bece-ede313806a89",
+      "name": "VMD0057 Fuel Combustion  - Equation 3.",
+      "description": "Project emissions from fossil fuel combustion for mobile equipment, flaring and power and heat generation for each transport leg and each intermediate storage site.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECombFuel,y = Σ_d (QFuel,d,y on-site * EFFuel,CO2,d) + Σ_d (QFuel,d,y on-site * EFFuel,CH4,d) * GWPCH4 + Σ_d (QFuel,d,y on-site * EFFuel,N2O,d) * GWPN2O",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "EFFuelCO2d",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "EFFuelCH4d",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "EFFuelN2Od",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "GWPN2O",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "69dfbca7-8423-4236-87c9-90ace09118a5",
+      "name": "VMD0057 Off-site Fuel Combustion  - Equation 4.",
+      "description": "The quantity of power or heat supplied from a directly connected off-site facility.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (HeatTra,y / nHeat,y + ElectricityTra,y / nElec,y) / (HeatCogen,y / nHeat,y + ElectricityCogen,y / nElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "HeatTray",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "ElectricityTray",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "99854543-a093-4266-b796-f8a5722a7662",
+      "name": "VMD0057 Fugitive and Venting Emissions from On-site Fuel Use  - Equation 5.",
+      "description": "Transportation activities using natural gas must quantify fugitive and venting emissions during facility operations. Quantification is based on component counts and respective emission 6 Available at: https://cdm.unfccc.int/methodologies/PAmethodologies/tools/am-tool-09-v3.0.pdf VMD0057, v1.0  12 factors, fugitive emissions are quantified following the approach in the US Environmental Protection Agency’s Electronic Code of Federal Regulations, Title 40, Part 98, Subpart W,§ 98.233(r) 7.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEFuel_FV,y = (∑_n Countn,y * EFn * Tn,y * 0.001 + ∑_m Vm) * GWPCH4",
+      "masterVariableTemplates": [
+        {
+          "id": "Countny",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "EFn",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "Tny",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "Vm",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "b8443c8e-3779-4bfa-b59e-e599366df7dd",
+      "name": "VMD0057 Option B: Default Values  - Equation 6.",
+      "description": "Project emissions associated with a transport leg may be calculated as per Equation (6), except when a pipeline is used as the transport mode.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PETra,r,y = ∑_r (Dr,y * MCO2Tra,r,y * DEFr * 10^-6)",
+      "masterVariableTemplates": [
+        {
+          "id": "Dry",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "MCO2Trary",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "DEFr",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "e2441631-816d-4ae2-8c14-d05d4ab8fbc6",
+      "name": "VMD0057 Leakage Emissions from Transport of CO2 - Equation 7.",
+      "description": "Transport Project Activity leakage emissions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LETra,y = ∑_r LETra,r,y + ∑_f LETra,f,y - LEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LETrary",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "LETrafy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "LEnonVCSCO2y",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "13424306-ed79-478a-b274-5eb26e8f6648",
+      "name": "VMD0057 Leakage emissions associated with a transport leg are calculated - Equation 8.",
+      "description": "Leakage emissions associated with a transport leg.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LETra,r,y = LEFuel,r,y + LEElec,r,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEFuelry",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "LEElecry",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "aefe5405-a5be-4f6a-940b-4d285eeaaf12",
+      "name": "VMD0057 Leakage emissions associated with intermediate storage - Equation 9.",
+      "description": "Leakage emissions associated with a transport leg.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LETra,f,y = LEFuel,f,y + LEElec,f,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEFuelfy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "LEElecfy",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "88443801-6b7e-4ac0-81d6-4a9a79c11218",
+      "name": "VMD0057 Leakage Emissions from Fuel Consumption - Equation 10.",
+      "description": "Upstream emissions from the production and transportation of fuel consumed in the module boundary.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEFuel,y = ∑_d (QFuel,d,y on-site * EFUpstream_Fuel,d,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "EFUpstreamFueldy",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "0570547e-9f81-40f1-8360-f0b0ff371192",
+      "name": "Calculation of QFuel,d,y off-site quantities for DAC VMD0057.",
+      "description": "Quantity of fuel type used to operate on-site and/ off-site equipment in year y.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (HeatTra,y / ηHeat,y + ElectricityTra,y / ηElec,y) / (HeatCogen,y / ηHeat,y + ElectricityCogen,y / ηElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "HeatTray",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "ElectricityTray",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0057:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "099d5b5f-8e33-4aad-a341-9b713325d420",
+      "name": "VMD0058 Quantification of Project Emissions - Equation 1.",
+      "description": "Storage emissions associated with the sequestration site.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PESto,y = PECombFuel,y + PEElec,y + PEFuel_FV,y + IDSurface,y + UDSurface,y + IDSubsurface,y + UDSubsurface,y - PEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECombFuely",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PEElecy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "PEFuelFVy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "IDSurfacey",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "UDSurfacey",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "IDSubsurfacey",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "UDSubsurfacey",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "PEnonVCSCO2y",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "12a8707f-f2b9-4e3e-8639-0c077e70cab1",
+      "name": "VMD0058 Project Emissions from Fuel Combustion - Equation 2.",
+      "description": "Project emissions from fossil fuel combustion for mobile equipment, and power and heat generation.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECombFuel,y = Σ_d (QFuel,d,y on-site * EFFuel,CO2,d) + Σ_d (QFuel,d,y on-site * EFFuel,CH4,d) * GWPCH4 + Σ_d (QFuel,d,y on-site * EFFuel,N2O,d) * GWPN2O",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "EFFuelCO2d",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "EFFuelCH4d",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "EFFuelN2Od",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "GWPN2O",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "4c542c09-9648-4c73-b5ee-453ccf92a42c",
+      "name": "VM0058 Off-site Fuel Consumption - Equation 3.",
+      "description": "The quantity of power or heat supplied from a directly connected off-site facility.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y on-site = QCogen,d,y * (HeatSto,y / nHeat,y + ElectricitySto,y / nElec,y) / (HeatCogen,y / nHeat,y + ElectricityCogen,y / nElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "HeatStoy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "ElectricityStoy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "22325e79-91ea-4fa6-9b5c-12f71f4b8a33",
+      "name": "VMD0058 Fugitive and Venting Emissions from On-site Fuel Use - Equation 4.",
+      "description": "Project activities using natural gas must quantify fugitive and venting emissions during facility operations. Quantification is based on component counts and respective emission factors, fugitive emissions are quantified following the approach in the US Environmental Protection Agency's Electronic Code of Federal Regulations, Title 40, Part 98, Subpart W, § 98.233 (r).4.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEFuel_FV,y = (∑_n Countn,y * EFn * Tn,y * 0.001 + ∑_m Vm) * GWPCH4",
+      "masterVariableTemplates": [
+        {
+          "id": "Countny",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "EFn",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "Tny",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "Vm",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "a2f01691-182e-4731-a854-f1bd42f4a6b1",
+      "name": "VMD0058 Project Emissions from Intentional Discharges, Approach 1, Option 1: Measurement of Venting - Equation 5.",
+      "description": "Project emissions from intentional discharges are a result of venting that is downstream of mandatory monitoring points. Venting events can be differentiated by whether they originate from surface facilities (IDSurface) or the subsurface (IDSubsurface).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "IDSurface,y or IDSubsurface,y = ∑_h FRmass,h * %CO2mass,h * Th",
+      "masterVariableTemplates": [
+        {
+          "id": "FRmassh",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "%CO2massh",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "Th",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "3881732c-8cdb-4a33-842a-ea2013164832",
+      "name": "VMD0058 Project Emissions from Intentional Discharges, Approach 1, Option 2: Volumetric Flow - Equation 6.",
+      "description": "Undetected leakage emissions are those emissions that occur from the storage site but are not detected by the monitoring system.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "UDSurface,y or UDSubsurface,y = ∑_h FRvol(STP),h * %CO2vol(STP),h * pCO2(STP) * Th",
+      "masterVariableTemplates": [
+        {
+          "id": "FRvolSTPh",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "%CO2volSTPh",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "pCO2STP",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "Th",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "db830596-ed4f-440f-824c-fcbe61d2d37b",
+      "name": "VMD0058 Project Emissions from Intentional Discharges, Approach 2: Estimation of Surface Venting for Isolated Volumes - Equation 7.",
+      "description": "Where any part of an isolated section of pipe is downstream of the mandatory monitoring point and is depressurized, project proponents must estimate the vented mass of CO2 using the volume of the isolated pipe.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "IDSurface,y = ∑_m ∑_n Vn,m(STP) * %CO2vol(STP) * pCO2(STP)",
+      "masterVariableTemplates": [
+        {
+          "id": "vnmSTP",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "%CO2volSTP",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "pCO2STP",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "2cbba306-b07f-4795-aa59-fc71966c073f",
+      "name": "VMD0058 Project Emissions from Unintentional Discharges at the Surface, Emission Source 1: Fugitive Emissions Downstream of the Mandatory Monitoring Point - Equation 8.",
+      "description": "The project proponent must actively monitor and report unintentional discharge emissions using the approaches below. The potential emission sources for unintentional discharges of CO2 include components (e.g., valves, pipe fittings/connectors, open-ended pipes, pressure relief valves, flanges, meters, instruments) and pipelines.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "UDSurface,y = ∑_p EFp * Tp,y * b * 0.001 + ∑_n EFn * Tn,y * 0.001",
+      "masterVariableTemplates": [
+        {
+          "id": "EFp",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "Tpy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "b",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "EFn",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "Tny",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "69d1c30f-b91d-4cd7-8a44-9758ade1c781",
+      "name": "VMD0058 Project Emissions from Unintentional Discharges from Subsurface Storage - Equation 9.",
+      "description": "Project emissions from unintentional discharges from the subsurface are CO2 leaks (loss event) from the geological storage complex.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "UDSubsurface,y = ∑_a (QLE,a) + QThreshold,y",
+      "masterVariableTemplates": [
+        {
+          "id": "QLEa",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "QThresholdy",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "69d1c30f-b91d-4cd7-8a44-9758ade1c781",
+      "name": "VMD0058 Quantification of Leakage - Equation 10.",
+      "description": "Equation (10) accounts for leakage emissions in this module.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LESto,y = LEFuel,y + LEElec,y - LEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEFuely",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "LEElecy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "LEnonVCSCO2y",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "de1393b3-61f6-4616-b96f-16a79bdfbdce",
+      "name": "VMD0058 Leakage Emissions from Fuel Consumption - Equation 11.",
+      "description": "Upstream emissions from the production and transportation of fuel to the storage site and directly connected off-site facilities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEFuel,y = ∑_d (QFuel,d,y on-site * EFUpstream_Fuel,d,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "EFUpstreamFueldy",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "5c48a5f1-b9f2-4c4c-957e-f0dccb3828af",
+      "name": "Calculation of QFuel,d,y off-site quantities for DAC VMD0058.",
+      "description": "Quantity of fuel type used to operate on-site and/ off-site equipment in year y.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (Heatsto,y / ηHeat,y + Electricitysto,y / ηElec,y) / (HeatCogen,y / ηHeat,y + ElectricityCogen,y / ηElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "HeatStoy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "ElectricityStoy",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0058:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0058:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "2ee106e2-3663-4939-a4e4-a2c3ddb90a9c",
+      "name": "VMD0059 Quantification of Project Emissions - Equation 1.",
+      "description": "The following sections provide guidance for determining project emissions from BECCS activities (i.e., PECap,y).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECap,y = PECombFuel,y + PEFuel_FV,y + PEElec,y - PEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECombFuely",
+          "version": "VMD0057:1.0"
+        },
+        {
+          "id": "PEFuelFVy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "PEElecy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "PEnonVCSCO2y",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "1c0df7e9-2700-4f77-bfc1-5e0b4fe515fc",
+      "name": "VMD0059 Project Emissions from Fuel Combustion - Equation 2.",
+      "description": "Project emissions from fossil fuel combustion for mobile equipment, flaring and power and heat generation.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECombFuel,y = Σ_d (QFuel,d,y on-site * EFFuel,CO2,d) + Σ_d (QFuel,d,y on-site * EFFuel,CH4,d) * GWPCH4 + Σ_d (QFuel,d,y on-site * EFFuel,N2O,d) * GWPN2O",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFFuelCO2d",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFFuelCH4d",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFFuelN2Od",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "GWPN2O",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "3eda795b-f665-49d4-bdcd-60d03960c1de",
+      "name": "VMD0059 Off-site Fuel Consumption - Equation 3.",
+      "description": "The quantity of power or heat supplied from a directly connected off-site facility.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y on-site = QCogen,d,y * (HeatBECCS,y / nHeat,y + ElectricityBECCS,y / nElec,y) / (HeatCogen,y / nHeat,y + ElectricityCogen,y / nElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "HeatBECCSy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "ElectricityBECCSy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "373d122c-4a67-4f64-96be-cacd9422f218",
+      "name": "VMD0059 Fugitive and Venting Emissions from On-site Fuel Use - Equation 4.",
+      "description": "BECCS projects using natural gas on-site must quantify fugitive and venting emissions during facility operations. Quantification is based on component counts and respective emission factors. Fugitive emissions are quantified following the approach in the US Environmental Protection Agency's Electronic Code of Federal Regulations, Title 40, Part 98, Subpart W, § 98.233 (r).4.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEFuel_FV,y = (∑_n Countn,y * EFn * Tn,y * 0.001 + ∑_m Vm) * GWPCH4",
+      "masterVariableTemplates": [
+        {
+          "id": "Countny",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFn",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "Tny",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "Vm",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "ff33727a-5e3a-46d2-9326-462defcef7a1",
+      "name": "VMD0059 Quantification of Leakage - Equation 5.",
+      "description": "The leakage emissions from project activities are calculated.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECap,y = LEFuel,y + LEElec,y + LEMat,y + LEBiomass,y - LEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEFuely",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEElecy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEMaty",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEBiomassy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEnonVCSCO2y",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "6e516b4f-4ca5-4ebd-8129-fbcea71264e4",
+      "name": "VMD0059 Leakage Emissions from Fuel Consumption - Equation 6.",
+      "description": "Upstream emissions related to fuel for use at the capture facility or fuel use by a third-party supplying heat or steam to the capture facility are calculated using Equation (6).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEFuel,y = ∑_d (QFuel,d,y on-site * EFUpstream_Fuel,d)",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFUpstreamFueld",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "a1ad2044-d8f6-4bb4-a415-442ce86b60b0",
+      "name": "VMD0059 Leakage Emissions from Consumption of Capture Materials - Equation 7.",
+      "description": "Leakage emissions from regeneration and replacement and the related production of capture materials during subsequent years are calculated using Equation (7).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEMat,y = ∑_j (QMat,j,y * EFj)",
+      "masterVariableTemplates": [
+        {
+          "id": "QMatjy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFj",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "2d429411-c4ed-45bd-90b1-ddba5f09516b",
+      "name": "VMD0059 Leakage Emissions from Biomass Feedstock Supply to Source Facility - Equation 8.",
+      "description": "Leakage emissions from biomass feedstock supply (LEBiomass,y) are calculated as per Equation (8).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEBiomass,y = LEBC,y + LEBT,y + LEBM,y + LEPr,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEBCy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEBTy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEBMy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "LEPry",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "b0862406-ccee-486e-9684-cd183794ff1c",
+      "name": "VMD0059 Calculating Increase in Biomass Consumption - Equation 9.",
+      "description": "Leakage emissions from biomass consumption are based on the relative change in biomass consumption at the source facility between the project and the baseline and are calculated using Equation (9).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "ΔQBio,b,y = MAX (msb,project,b,y - msb,base,b,0) + MAX (Mnt,project,b,y - Mnt,base,b,0",
+      "masterVariableTemplates": [
+        {
+          "id": "msbprojectby",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "msbbaseb",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "mntprojectby",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "mntbaseb",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "0d8b300c-4185-42f4-bde3-a2e00ea2565d",
+      "name": "VMD0059 Calculating Leakage from Biomass Cultivation, Option 1: Embodied Emissions Factor - Equation 10.",
+      "description": "Use an embodied emissions factor, determined through a life cycle assessment (LCA), in Equation (10) to calculate leakage emissions from cultivation.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEBC,y = ∑_b (ΔQBio,b,y * EFb)",
+      "masterVariableTemplates": [
+        {
+          "id": "DQBioby",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "EFb",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "dcb80a58-1e33-4682-a56b-c4f01940f94f",
+      "name": "VMD0059 Calculating Leakage from Biomass Cultivation, Option 2: Calculate Leakage Emissions - Equation 11.",
+      "description": "Use Equation (11) to calculate the area of land required to produce the mass of biomass type b consumed by project activities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "Areacult,b,y = ΔQBio,b,y / Yieldb,y",
+      "masterVariableTemplates": [
+        {
+          "id": "DQBioby",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "Yieldby",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "d310b6b5-9e9a-45c2-acd0-b1d20b974529",
+      "name": "VMD0059 Calculating Leakage from Biomass Cultivation, Option 2: Calculate Leakage Emissions - Equation 12.",
+      "description": "Use Equation (12) to assign the emissions resulting from biomass cultivation projects as leakage.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEBC,y = ∑_b PEBC,b,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PEBCby",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "43cb51f9-9254-4bec-93af-e3af2d8c80f6",
+      "name": "VMD0059 Calculating Leakage from the Transportation of Biomass - Equation 13.",
+      "description": "Project proponents must use Equation (13) to determine leakage emissions from the transportation of biomass.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEBT,y = ∑_b ∑_mode (ΔQBio,b,y * Dmode,y * DEFmode * 10^-6)",
+      "masterVariableTemplates": [
+        {
+          "id": "DQBioby",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "Dmodey",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "DEFmode",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "b7efdb04-7efd-447e-a159-c2ec3ce21934",
+      "name": "VMD0059 Calculating Leakage from Processing of Biomass - Equation 14.",
+      "description": "Typical processing of biomass and its residues can include mechanical (e.g., sorting, grinding), thermo-chemical (e.g., drying, vapor explosion, acid or alkali treatments), and biological processes. Project proponents must use Equation (14) to determine the leakage emissions from biomass processing.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEPr,y = ∑_b (PEBP,b,y + PEBRP,b,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "PEBPby",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "PEBRPby",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "4255d742-5ba5-4830-b55f-aa6dd42985d8",
+      "name": "Calculation of QFuel,d,y off-site quantities for DAC VMD0059.",
+      "description": "Quantity of fuel type used to operate on-site and/ off-site equipment in year y.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (HeatBECCS,y / ηHeat,y + ElectricityBECCS,y / ηElec,y) / (HeatCogen,y / ηHeat,y + ElectricityCogen,y / ηElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "HeatBECCSy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "ElectricityBECCSy",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0059:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0059:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "89594a50-f426-49bb-8b85-dbf8a5ad549a",
+      "name": "VT0013 Scenario 1: Single Feedstocks  - Equation 1.",
+      "description": "In this scenario, each capture facility has a single CO2 source or feedstock that can categorically be assigned to either reductions (CAPEc,y) or removals (CAPRc,y).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "CAPEc,y or CAPRc,y = QCO2,c,y - QCO2,nonVCS CO2,c,y",
+      "masterVariableTemplates": [
+        {
+          "id": "QCO2cy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "QCO2nonVCSCO2cy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "e91b6e3d-dfa4-432b-a524-08538958e98d",
+      "name": "VT0013 Scenario 2: Mixed Feedstocks - Equation 2.",
+      "description": "In this scenario, the captured CO2 cannot be categorized directly as reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "CAPRc,y = (QCO2,c,y - QCO2,nonVCS CO2,c,y) * frem-CO2,c,y",
+      "masterVariableTemplates": [
+        {
+          "id": "QCO2cy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "QCO2nonVCSCO2cy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "frem-CO2cy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "5eed8b99-0496-456e-9cf3-ca59060ec2d1",
+      "name": "VT0013 Scenario 2: Mixed Feedstocks - Equation 3.",
+      "description": "Equation (3) determines the quantity of CO2 captured that qualifies as a reduction for each capture facility under Scenario 2.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "CAPRc,y = (QCO2,c,y - QCO2,nonVCS CO2,c,y) * ( 1 - frem-CO2,c,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCO2cy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "QCO2nonVCSCO2cy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "frem-CO2cy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "20ae43b7-3c13-4056-8a26-4f5309b255cc",
+      "name": "VT0013 Determining Total CO2 Captured - Equation 4.",
+      "description": "Equation (4) calculates the total amount of CO2 captured as reductions and removals by the project each year.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "TCAPy = Σ_c CAPEc,y + Σ_c CAPRc,y",
+      "masterVariableTemplates": [
+        {
+          "id": "TCAPy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "CAPEcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "CAPRcy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "de618cc5-15d1-49cf-a173-aa393dfc0aed",
+      "name": "VT0013 End-Use 1: Combustion - Equation 5.",
+      "description": "Equation (5) determines the fraction of a CO2 stream that represents removals (frem-CO2,c,y) from the combustion of biomass to generate heat and power. This applies to bioenergy and waste-to-energy plants.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "frem-CO2,c,y = Σ_b (msb,b,c,y * wsb,b,c,y) / Σ_f (mf,c,y * wf,c,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "msbbcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "wsbbcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "mfcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "wfcy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "b3408610-a0b1-43ca-947c-d20bdeaa8be1",
+      "name": "VT0013 End-Use 2: Conversion - Equation 6.",
+      "description": "Equation (6) determines the fraction of a CO2 stream that represents removals (frem-CO2,c,y) from the conversion of biomass into a biofuel.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "frem-CO2,c,y = Σ_b (msb,b,c,y * YCO2,b,y) / Σ_f (Mf,c,y * YCO2,f,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "msbbcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "YCO2by",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "mfcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "YCO2fy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "47a8da24-434e-4061-b387-33b56cb1c92a",
+      "name": "VT0013 Anaerobic Digestion, Gasification, or Pyrolysis  - Equation 7.",
+      "description": "Project proponents must calculate the CO2 yield of the biomass feedstocks.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "YCO2,b,y = VSb,y * YBG,b,y * %CO2vol(STP),b * nsep,b",
+      "masterVariableTemplates": [
+        {
+          "id": "VSby",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "YBGby",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "%CO2volSTPb",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "nsepb",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "ddafde91-8604-4531-a75a-842e617df0bf",
+      "name": "VT0013 Anaerobic Digestion, Gasification, or Pyrolysis - Equation 8.",
+      "description": "Project proponents must calculate the CO2 yield of the biomass feedstocks.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "YCO2,f,y = VSf,y * YBG,f,y * %CO2vol(STP),f * nsep,f",
+      "masterVariableTemplates": [
+        {
+          "id": "VSfy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "YBGfy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "%CO2volSTPf",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "nsepf",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "d3381ce5-d8a7-44f3-81b4-caadf7078ba3",
+      "name": "VT0013 Aerobic Digestion - Equation 9.",
+      "description": "Equation (9) calculates the fraction of a CO2 stream that represents removals (frem-CO2,c,y) from the aerobic digestion of biomass to produce biogas.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "YCO2,b,y = VSb,y * YG,b,y * nsep,b",
+      "masterVariableTemplates": [
+        {
+          "id": "VSby",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "YGby",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "nsepb",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "52e01327-6072-42ee-a8f0-2c0218717bc3",
+      "name": "VT0013 Alcoholic Fermentation (Ethanol Production)  - Equation 10.",
+      "description": "Equation (10) calculates the fraction of a CO2 stream that represents removals (frem-CO2,c,y) from the alcoholic fermentation of biomass to produce ethanol.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "YCO2,b,y = YBE,b,y * CO2vol,BE(STP)",
+      "masterVariableTemplates": [
+        {
+          "id": "YBEby",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "CO2volBESTP",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "3d932d44-abf0-46ea-b634-32e4fee71196",
+      "name": "VT0013 Alcoholic Fermentation (Ethanol Production) Volumetric - Equation 11.",
+      "description": "Equation (11) calculates the fraction of a CO2 stream that represents removals (frem-CO2,c,y) from the alcoholic fermentation of biomass to produce ethanol using volumetric flow rates.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "CO2vol,BE(STP) = FRvol(STP) * %CO2vol(STP) / Qethanol,y",
+      "masterVariableTemplates": [
+        {
+          "id": "FRvolSTP",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "%CO2volSTP",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "Qethanoly",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "6617187f-0ee9-49dd-9bab-7675098b019f",
+      "name": "VT0013 Allocation of Baseline Emissions to Reductions and Removals - Equation 12.",
+      "description": "Equation (12) determines the amount of baseline emissions allocated to removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "BECAPR,y = BEy * ∑_c CAPRc,y / TCAPy",
+      "masterVariableTemplates": [
+        {
+          "id": "BEy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "CAPRcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "TCAPy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "95f6827e-29e8-421b-aa8d-1cbe143b8a49",
+      "name": "VT0013 Allocation to Reductions - Equation 13.",
+      "description": "Equation (13) determines the amount of baseline emissions allocated to reductions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "BECAPE,y = BEy * ∑_c CAPEc,y / TCAPy",
+      "masterVariableTemplates": [
+        {
+          "id": "BEy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "CAPEcy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "TCAPy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "3aaf42f8-86c6-4ab9-a4af-039f861b5e5a",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 1: Differentiation Method - Equation 14.",
+      "description": "This method is permissible for segments where captured CO2 can be categorized as reductions or removals based on equipment or temporal differentiation. Equipment differentiation means that equipment involved in the processing of captured CO2 has individual metering and the resulting emissions can be directly attributed to each CO2 stream. Temporal differentiation means captured CO2 streams flow at different times and equipment meters have a time resolution sufficient to resolve and attribute the emissions from each period accordingly.  Equations (14), (15), (16), and (17) assign the differentiated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECAPR,g,y = ∑_D PECAPR,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECAPRgDy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "8ab85f16-1475-47ae-9adf-4f0e29b70d9e",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 1: Differentiation Method - Equation 15.",
+      "description": "This method is permissible for segments where captured CO2 can be categorized as reductions or removals based on equipment or temporal differentiation. Equipment differentiation means that equipment involved in the processing of captured CO2 has individual metering and the resulting emissions can be directly attributed to each CO2 stream. Temporal differentiation means captured CO2 streams flow at different times and equipment meters have a time resolution sufficient to resolve and attribute the emissions from each period accordingly.  Equations (14), (15), (16), and (17) assign the differentiated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECAPR,g,y = ∑_D LECAPR,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LECAPRgDy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "e0543b4f-03b3-49fb-83e8-e10065ee0b24",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 1: Differentiation Method - Equation 16.",
+      "description": "This method is permissible for segments where captured CO2 can be categorized as reductions or removals based on equipment or temporal differentiation. Equipment differentiation means that equipment involved in the processing of captured CO2 has individual metering and the resulting emissions can be directly attributed to each CO2 stream. Temporal differentiation means captured CO2 streams flow at different times and equipment meters have a time resolution sufficient to resolve and attribute the emissions from each period accordingly.  Equations (14), (15), (16), and (17) assign the differentiated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECAPE,g,y = ∑_D PECAPE,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECAPEgDy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "8c0a4564-ee93-4911-8891-3d2f69b66932",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 1: Differentiation Method - Equation 17.",
+      "description": "This method is permissible for segments where captured CO2 can be categorized as reductions or removals based on equipment or temporal differentiation. Equipment differentiation means that equipment involved in the processing of captured CO2 has individual metering and the resulting emissions can be directly attributed to each CO2 stream. Temporal differentiation means captured CO2 streams flow at different times and equipment meters have a time resolution sufficient to resolve and attribute the emissions from each period accordingly.  Equations (14), (15), (16), and (17) assign the differentiated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECAPE,g,y = ∑_D LECAPE,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LECAPEgDy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "d8ec59bb-c0da-44ac-a992-0a8289f8c4b8",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 2: Mass Balance - Equation 18.",
+      "description": "This method is permissible for segments where captured CO2 cannot be categorized as reductions or removals based on equipment or temporal differentiation. Equations (18), (19), (20), and (21) assign the allocated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECAPR,g,y = PETotal,g,y * frem-CO2,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PETotalgy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "frem-CO2gy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "1ceede74-29c3-4ff4-baa1-60d2a3f9b865",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 2: Mass Balance - Equation 19.",
+      "description": "This method is permissible for segments where captured CO2 cannot be categorized as reductions or removals based on equipment or temporal differentiation. Equations (18), (19), (20), and (21) assign the allocated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECAPR,g,y = LETotal,g,y * frem-CO2,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LETotalgy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "frem-CO2gy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "4551beec-ac3e-4173-9cdb-8ab941f3c447",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 2: Mass Balance - Equation 20.",
+      "description": "This method is permissible for segments where captured CO2 cannot be categorized as reductions or removals based on equipment or temporal differentiation. Equations (18), (19), (20), and (21) assign the allocated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECAPE,g,y = PETotal,g,y * (1 - frem-CO2,g,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "PETotalgy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "frem-CO2gy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "6ac3ce1e-39f9-4048-bae8-d0b66173fa2e",
+      "name": "VT0013 Determining Project and Leakage Emissions for Reductions and Removals, Option 2: Mass Balance - Equation 21.",
+      "description": "This method is permissible for segments where captured CO2 cannot be categorized as reductions or removals based on equipment or temporal differentiation. Equations (18), (19), (20), and (21) assign the allocated portion of project and leakage emissions to either reductions or removals.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECAPE,g,y = LETotal,g,y * (1 - frem-CO2,g,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "LETotalgy",
+          "version": "VT0013:1.0"
+        },
+        {
+          "id": "frem-CO2gy",
+          "version": "VT0013:1.0"
+        }
+      ],
+      "modules": [
+        "VT0013"
+      ]
+    },
+    {
+      "id": "940a7b31-77f9-4f4c-b7cd-7d2a28ceaab6",
+      "name": "Calculation of QFuel,d,y on-site via onsite and off-site quantities for each module, substitute the appropriate version of the VariableTemplates for the module - VMD0056 Equation 3a, VMD0057 Equation 4a, VMD0058 Equation 3a, VMD0059 Equation 3a.",
+      "description": "Quantity of fuel type used to operate on-site and/ off-site equipment in year y.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y = QFuel,d,y on-site + QFuel,d,y off-site",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0056:1.0"
+        },
+        {
+          "id": "QFueldyOffSite",
+          "version": "VMD0056:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0056",
+        "VMD0057",
+        "VMD0058",
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "f710e002-da79-42fe-a9ab-f94a38d16c39",
+      "name": "VMD0062 Project Emissions from project activities - Equation 1.",
+      "description": "Project emissions for the reporting period.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECap,y = PECombFuel,y + PEFuel_FV,y + PEElec,y - PEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PECombFuely",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "PEFuelFVy",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "PEElecy",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "PEnonVCSCO2y",
+          "version": "VMD0062:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0062"
+      ]
+    },
+    {
+      "id": "6662d593-8b08-4489-9cbb-6dbac24e9d85",
+      "name": "VMD0062 Project emissions from fossil fuel combustion for acid gas dehydration, conditioning, and compression processes are calculated in Equation 2.",
+      "description": "Project emissions for the reporting period.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PECombFuel,y = Σ_d (QFuel,d,y on-site * EFFuel,CO2,d) + Σ_d (QFuel,d,y on-site * EFFuel,CH4,d) * GWPCH4 + Σ_d (QFuel,d,y on-site * EFFuel,N2O,d) * GWPN2O",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "EFFuelCO2d",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "EFFuelCH4d",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "EFFuelN2Od",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        },
+        {
+          "id": "GWPN2O",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0062"
+      ]
+    },
+    {
+      "id": "16ec1108-2b00-4468-9739-e394af93fae7",
+      "name": "Calculation of QFuel,d,y off-site quantities for VMD0062.",
+      "description": "Quantity of fuel type d used to operate on-site and/or third-party (for off-site heat/steam supply) equipment in year y (m3 or kg or GJ).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QFuel,d,y off-site = QCogen,d,y * (HeatAG_conditioning,y / ηHeat,y + ElectricityAG_conditioning,y / ηElec,y) / (HeatCogen,y / ηHeat,y + ElectricityCogen,y / ηElec,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QCogendy",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "HeatAgConditioningy",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "ElectricityAgConditioningy",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "HeatCogeny",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "ElectricityCogeny",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "nHeaty",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "nElecy",
+          "version": "VMD0062:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0062"
+      ]
+    },
+    {
+      "id": "e713bc41-93c0-4e65-a5ee-1b55d7eedc12",
+      "name": "VMD0062 Fugitive and Venting Emissions from On-site natural gas use associated with project activities in year y (t CO2e) - Equation 4.",
+      "description": "Projects that use natural gas on-site must quantify fugitive and venting emissions from components that are not present in the baseline.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEFuel_FV,y = (∑_n Countn,y * EFn * Tn,y * 0.001 + ∑_m Vm) * GWPCH4",
+      "masterVariableTemplates": [
+        {
+          "id": "Countny",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "EFn",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "Tny",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "Vm",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "GWPCH4",
+          "version": "VM0049:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0062"
+      ]
+    },
+    {
+      "id": "0781a17c-d042-48d4-a21d-51e578c6bc32",
+      "name": "VMD0062 Leakage Emissions from project activities - Equation 5.",
+      "description": "The calculation of project emissions from project activities.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LECap,y = LEFuel,y - LEnonVCSCO2,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEFuely",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "LEnonVCSCO2y",
+          "version": "VMD0062:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0062"
+      ]
+    },
+    {
+      "id": "4fe9ef06-c679-4130-bd5b-825c7bf6deac",
+      "name": "VMD0062 Upstream emissions related to fossil fuel consumption for acid gas dehydration, compression, and conditioning processes - Equation 6.",
+      "description": "Upstream emissions related to fossil fuel consumption for acid gas dehydration, compression, and conditioning processes.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEFuel,y = ∑_d (QFuel,d,y on-site * EFUpstream_Fuel,d)",
+      "masterVariableTemplates": [
+        {
+          "id": "QFueldyOnSite",
+          "version": "VMD0062:1.0"
+        },
+        {
+          "id": "EFUpstreamFueld",
+          "version": "VMD0062:1.0"
+        }
+      ],
+      "modules": [
+        "VMD0062"
+      ]
+    },
+    {
+      "id": "426faf66-fb0c-41b2-ba5f-021782437004",
+      "name": "VT0012 Amount of non-VCS CO2 captured in the project boundary and injected or delivered outside the project boundary - Equation 1.",
+      "description": "Non-VCS CO2 captured in the project boundary and injected or delivered outside the project boundary.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QCO2,nonVCS CO2,c,y = QTotal CO2,c,y * RnonVCS CO2,c,y",
+      "masterVariableTemplates": [
+        {
+          "id": "QTotalCO2cy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "RnonVCSCO2cy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "06b4dd9a-afec-45c5-989a-b20da0cc597b",
+      "name": "VT0012 CO2 captured from excess non-traceable biomass - Equation 2.",
+      "description": "Determines the captured emissions from non-traceable biomass discounted from total facility reductions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "Rnon-VCS CO2,c,y = Σb(mA_nt,b,c,y * wnt,b,c,y) * 44/12 / QTotal CO2,c,y",
+      "masterVariableTemplates": [
+        {
+          "id": "mAntbcy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "wntbcy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "0947d658-3f50-458a-8133-3c0842736f18",
+      "name": "VT0012 Equation (3) determines the adjusted quantity of non-traceable biomass generating emissions at capture facility c - Equation 3.",
+      "description": "Determines the captured emissions from non-traceable biomass discounted from total facility reductions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "mA_nt,b,c,y = mnt,b,c,y - MIN(mnt,b,c,y,(mBV,b,c * (1 − 0.1)number of years since project start date))",
+      "masterVariableTemplates": [
+        {
+          "id": "mntbcy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "mBVbc",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "40a1d6fe-3b58-4b98-a10a-0a3cceda6c04",
+      "name": "VT0012 Equation (4) determine of Base Value (mBV,b,c)  - Equation 4.",
+      "description": "Determines the captured emissions from non-traceable biomass discounted from total facility reductions.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "mBV,b,c = MIN(mAV_nt,b,c , 0.3 * Σ_c(mAV,T,c))",
+      "masterVariableTemplates": [
+        {
+          "id": "mAVntbc",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "mAVTc",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "60f4c9f9-2d5f-4c92-a9e1-44f0a663a952",
+      "name": "VT0012 The quantity of non-VCS CO2 injected in the project boundary in year y  - Equation 5.",
+      "description": "Determines the quantity of non-VCS CO2 injected in the project boundary in year y.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "QCO2,nonVCS,injected,y = Σ_j QTotal CO2,j,y + Σ_c QCO2,nonVCS,injected,c,y - Σ_k QTotal CO2,k,y",
+      "masterVariableTemplates": [
+        {
+          "id": "QTotalCO2jy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "QCO2nonVCSinjectedcy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "QTotalCO2ky",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "788ae6af-941b-4319-a22f-ebf82a0dfa98",
+      "name": "VT0012 Option 1: This option is applicable to all projects. Equations (6) assign all project and leakage emissions from a given segment to the VCS CO2 stream - Equation 6.",
+      "description": "Project emissions from segment g in year y associated with VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEVCS CO2,g,y = PETotal,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PETotalgy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "1079fb4b-9448-4bad-8e9f-6699108cbde9",
+      "name": "VT0012 Option 1: This option is applicable to all projects. Equations (7) assign all project and leakage emissions from a given segment to the VCS CO2 stream - Equation 7.",
+      "description": "Leakage emissions from segment g in year y associated with VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEVCS CO2,g,y = LETotal,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LETotalgy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "6fb70cfb-7220-4ba2-840e-9e9290e45413",
+      "name": "VT0012 Option 1: As all project emissions are assigned to VCS CO2 streams in this option, project emissions for non-VCS CO2 streams are zero for the segment - Equation 8.",
+      "description": "Leakage emissions from segment g in year y associated with VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEnonVCS CO2,g,y = 0",
+      "masterVariableTemplates": [],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "6867f65d-8477-4c05-991e-366e07c69d53",
+      "name": "VT0012 Option 1: As all leakage emissions are assigned to VCS CO2 streams in this option, leakage emissions for non-VCS CO2 streams are zero for the segment - Equation 8.",
+      "description": "Leakage emissions from segment g in year y associated with VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEnonVCS CO2,g,y = 0",
+      "masterVariableTemplates": [],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "b979b51f-4739-4d2a-90ac-8c8d48d46bd9",
+      "name": "VT0012 Option 2: Differentiation Method - This option is applicable when CO2 streams can be categorized entirely as VCS or non-VCS streams based on equipment or temporal differentiation - Equation 10.",
+      "description": "Project emissions from segment g in year y associated with VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEVCS CO2,g,y = ∑_D PEVCS CO2,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PEVCSCO2gDy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "0fef6de0-bd71-4938-a6de-ed3f427f64bd",
+      "name": "VT0012 Option 2: Differentiation Method - This option is applicable when CO2 streams can be categorized entirely as VCS or non-VCS streams based on equipment or temporal differentiation - Equation 10.",
+      "description": "Leakage emissions from segment g in year y associated with VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEVCS CO2,g,y = ∑_D LEVCS CO2,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEVCSCO2gDy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "6a7fcb35-dcf4-46d1-90ee-0543c399aa6d",
+      "name": "VT0012 Option 2: Differentiation Method - This option is applicable when CO2 streams can be categorized entirely as VCS or non-VCS streams based on equipment or temporal differentiation - Equation 10.",
+      "description": "Project emissions from segment g in year y associated with non-VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEnonVCS CO2,g,y = ∑_D PEnonVCS CO2,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PEnonVCSCO2gDy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "0f59a878-1c0f-4ff2-aa09-96b91173088e",
+      "name": "VT0012 Option 2: Differentiation Method - This option is applicable when CO2 streams can be categorized entirely as VCS or non-VCS streams based on equipment or temporal differentiation - Equation 10.",
+      "description": "Leakage emissions from segment g in year y associated with non-VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEnonVCS CO2,g,y = ∑_D LEnonVCS CO2,g,D,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEnonVCSCO2gDy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "d2c4f6dd-b79f-4b29-8dad-f2f30eed065e",
+      "name": "VT0012 Option 3: Mass Balance - Equations 14 allocates project emissions, from a segment based on the fraction of the CO2 stream that qualifies as VCS CO2 - Equation 14.",
+      "description": "Project emissions from segment g in year y associated with non-VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEnonVCS CO2,g,y = PETotal,g,y * RnonVCS CO2,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PETotalgy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "RnonVCSCO2gy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "359b672d-274b-4197-9d95-0719539d708f",
+      "name": "VT0012 Option 3: Mass Balance - Equations 14 allocates leakage emissions, from a segment based on the fraction of the CO2 stream that qualifies as VCS CO2 - Equation 14.",
+      "description": "Leakage emissions from segment g in year y associated with non-VCS carbon dioxide streams (t CO2).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEnonVCS CO2,g,y = LETotal,g,y * RnonVCS CO2,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LETotalgy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "RnonVCSCO2gy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "d556fbf6-9bc3-47bc-878e-2ff502884d08",
+      "name": "VT0012 Option 3: Mass Balance - Equation 16 calculates the ratio of non-VCS CO2 to the total CO2 that is processed, transported, or stored in the segment - Equation 16.",
+      "description": "Ratio of non-VCS carbon dioxide to total carbon dioxide processed, transported, or stored in segment g in year y (dimensionless).",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "RnonVCS CO2,g,y = (QnonVCS CO2,g,y / QTotal CO2,g,y)",
+      "masterVariableTemplates": [
+        {
+          "id": "QnonVCSCO2gy",
+          "version": "VT0012:1.0"
+        },
+        {
+          "id": "QTotalCO2gy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "1869a99e-15bf-4d42-a5fc-96151b970b18",
+      "name": "VT0012 Calculate Total Project Emissions from VCS and Non-VCS CO2 Streams - Equation 17.",
+      "description": "Equation (17) calculates the total project emissions associated with VCS and non-VCS CO2 flows as the sum of emissions from all segments in a module boundary.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "PEnonVCS CO2,y = Σ_g PEnonVCS CO2,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "PEnonVCSCO2gy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    },
+    {
+      "id": "7d4de9fd-13bc-4bfc-8c21-5f3d374739b6",
+      "name": "VT0012 Calculate Total Leakage Emissions from VCS and Non-VCS CO2 Streams - Equation 18.",
+      "description": "Equation (18) The total amount of leakage emissions associated with non-VCS and VCS CO2 flows are calculated as the sum of emissions from all segments in a module boundary as per Equation.",
+      "documentation": "inherited",
+      "version": "1.0",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DoubleValue",
+      "dataExample": "{ \"value\": 0, \"uOM\": \"tonnes\" }",
+      "formula": "LEnonVCS CO2,y = Σ_g LEnonVCS CO2,g,y",
+      "masterVariableTemplates": [
+        {
+          "id": "LEnonVCSCO2gy",
+          "version": "VT0012:1.0"
+        }
+      ],
+      "modules": [
+        "VT0012"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+    "claimSources": [
+        {
+            "description": "Total CO2 mass flow measured by mass flow meter x during the monitoring period.",
+            "name": "flowMeter: DAC-001: mass_out_dac",
+            "sourceType": "SensorDevice",
+            "unitOfMeasure": "tonnes",
+            "reportingFrequency": "Daily",
+            "entityExtensions": [],
+            "variableTemplates": [
+                {
+                    "variableTemplateId": "FRmassx",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "param:77"
+                }
+            ]
+        },
+        {
+            "description": "Mass of CO2 coming from DAC",
+            "name": "flowMeter: DAC-001: co2_mass_out_dac",
+            "sourceType": "SensorDevice",
+            "unitOfMeasure": "tonnes",
+            "reportingFrequency": "Daily",
+            "entityExtensions": [],
+            "variableTemplates": [
+                {
+                    "variableTemplateId": "QCO2injectediy",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "param:102"
+                },
+                {
+                    "variableTemplateId": "QCO2x",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "param:102"
+                }
+            ]
+        },
+        {
+            "description": "Mass of nonVCS CO2, coming from DAC",
+            "name": "flowMeter: DAC-001: co2_nonvcs_captured",
+            "sourceType": "SensorDevice",
+            "unitOfMeasure": "tCO2e",
+            "reportingFrequency": "Daily",
+            "entityExtensions": [],
+            "variableTemplates": [
+                {
+                    "variableTemplateId": "QCO2nonVCSinjectediy",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "param:103"
+                }
+            ]
+        },
+        {
+            "description": "2025 US EPA GHG Emissions Factors Hub",
+            "name": "epa_ghg_emissions_factors_2025",
+            "sourceType": "Reference",
+            "unitOfMeasure": "Unit Varies",
+            "reportingFrequency": "Monthly",
+            "entityExtensions": [],
+            "variableTemplates": [
+                {
+                    "variableTemplateId": "GWPCH4",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "EPA:GWPCH4"
+                },
+                {
+                    "variableTemplateId": "GWPN2O",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "EPA:GWPN2O"
+                },
+                {
+                    "variableTemplateId": "GWPCO2",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "EPA:GWPCO2"
+                }
+            ]
+        },
+        {
+            "description": "Stratos Project Design Description Document - PDD",
+            "name": "Project Design Document",
+            "sourceType": "Document",
+            "unitOfMeasure": "Unit Varies",
+            "reportingFrequency": "Monthly",
+            "entityExtensions": [],
+            "variableTemplates": [
+                {
+                    "variableTemplateId": "EFNGN2Od",
+                    "variableTemplateVersion": "VMD0056:1.0",
+                    "sourceIdentifier": "PDD:EFNGN2Od:VMD0056:1.0"
+                },
+                {
+                    "variableTemplateId": "EFNGCH4d",
+                    "variableTemplateVersion": "VMD0056:1.0",
+                    "sourceIdentifier": "PDD:EFNGCH4d:VMD0056:1.0"
+                },
+                {
+                    "variableTemplateId": "tAlpha10",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "PDD:tAlpha10:VM0049:1.0"
+                },
+                {
+                    "variableTemplateId": "tAlpha66",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "PDD:tAlpha66:VM0049:1.0"
+                },
+                {
+                    "variableTemplateId": "MCO2",
+                    "variableTemplateVersion": "VM0049:1.0",
+                    "sourceIdentifier": "PDD:MCO2:VM0049:1.0"
+                },
+                {
+                    "variableTemplateId": "b",
+                    "variableTemplateVersion": "VMD0058:1.0",
+                    "sourceIdentifier": "PDD:b:VMD0058:1.0"
+                },
+                {
+                    "variableTemplateId": "EFNGN2Od",
+                    "variableTemplateVersion": "VMD0057:1.0",
+                    "sourceIdentifier": "PDD:EFNGN2Od:VMD0057:1.0"
+                }
+            ]
+        }
+    ]
+}

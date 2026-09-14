@@ -1,0 +1,56 @@
+{
+  "name": "Verra's VM0049 CCS+ Master Extension Set Template",
+  "description": "Extension set for carbon capture and storage (CCS) projects",
+  "version": "1.0",
+  "documentation": "https://verra.org/methodologies/vm0049-carbon-capture-and-storage/",
+  "masterExtensionSetModules": [
+    {
+      "name": "VM0049",
+      "description": "Carbon Capture and Storage (CCS) module",
+      "version": "1.0",
+      "documentation": "https://verra.org/methodologies/vm0049-carbon-capture-and-storage/"
+    },
+    {
+      "name": "VMD0056",
+      "description": "Direct Air Capture (DAC) module",
+      "version": "1.0",
+      "documentation": "https://verra.org/methodologies/vmd0056-co2-capture-from-air-direct-air-capture-v1-0/"
+    },
+    {
+      "name": "VMD0057",
+      "description": "CO2 Transport for CCS Projects module",
+      "version": "1.0",
+      "documentation": "https://verra.org/methodologies/vmd0057-co2-transport-for-ccs-projects-v1-0/"
+    },
+    {
+      "name": "VMD0058",
+      "description": "VMD0058 CO2 Storage in Saline Aquifers and Depleted Hydrocarbon Reservoirs",
+      "version": "1.0",
+      "documentation": "https://verra.org/methodologies/vmd0058-co2-storage-in-saline-aquifers-and-depleted-hydrocarbon-reservoirs-v1-0/"
+    },
+    {
+      "name": "VMD0059",
+      "description": "VMD0059 CO2 Capture FROM Bioenergy (BECCS)",
+      "version": "1.0",
+      "documentation": "https://verra.org/wp-content/uploads/2025/04/VMD0059-CO2-Capture-from-Bioenergy-final-publication.pdf"
+    },
+    {
+      "name": "VMD0062",
+      "description": "VMD0062 CO2 Capture FROM Natural Gas Processing",
+      "version": "1.0",
+      "documentation": "https://verra.org/wp-content/uploads/2025/12/VMD0062-CO2-Capture-from-Natural-Gas-Processing-v1.0.pdf"
+    },
+    {
+      "name": "VT0012",
+      "description": "VT0012 Accounting Non-VCS CO2 in CCS Projects",
+      "version": "1.0",
+      "documentation": "https://verra.org/wp-content/uploads/2025/04/VT0012-Non-VCS-CO2-in-CCS-Projects-final-publication.pdf"
+    },
+    {
+      "name": "VT0013",
+      "description": "VT0013 Differentiating Reductions and Removals in CCS Projects, v1.0",
+      "version": "1.0",
+      "documentation": "https://verra.org/wp-content/uploads/2025/04/VT0013-Differentiating-Reductions-and-Removals-in-CCS-Projects-final-publication.pdf"
+    }
+  ]
+}

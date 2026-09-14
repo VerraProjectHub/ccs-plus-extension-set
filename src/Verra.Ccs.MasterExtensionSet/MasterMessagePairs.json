@@ -1,0 +1,94 @@
+{
+  "masterMessagePairs": [
+    {
+      "id": "3bb83576-7696-4be5-aab3-1d24dfeefbc6",
+      "name": "Calibrate Instrument Message Pair",
+      "version": "1.0.0",
+      "description": "This message pair provides the request/response messages for calibrating an instrument used in monitoring. Because there are different monitoring types, the CalibrateInstrument response includes a CalibrationResult object that can have different calibration data for different types of instruments. Receiving an CalibrationResult will require inspecting via reflection the data type in the CalibrationData object to properly deserialize.",
+      "documentation": "",
+      "requestMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CalibrateInstrumentRequest",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CalibrateInstrumentRequest\",\"claimId\": \"\",\"checkpointId\": \"\",\"claimSourceId\": \"\"}"
+      },
+      "responseMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CalibrateInstrumentResponse",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CalibrateInstrumentResponse\",\"claimId\": \"\",\"checkpointId\": \"\",\"claimSourceId\": \"\"}"
+      },
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "fa04aeb9-f59e-4e3f-8ff1-ee611efc7851",
+      "name": "Checkpoint Non-Conformance Message Pair",
+      "version": "1.0.0",
+      "description": "This message pair provides the request/response messages for handling checkpoint non-conformance in the monitoring process. The CheckpointNonConformanceRequest includes details about the non-conformance to be addressed, while the CheckpointNonConformanceMitigationResponse confirms the mitigation result.",
+      "documentation": "",
+      "requestMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CheckpointNonConformanceRequest",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CheckpointNonConformanceRequest\",\"exceptions\": []}"
+      },
+      "responseMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse\",\"mitigations\": []}"
+      },
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "3b9f509c-b21e-43d5-9c6b-c327160f7020",
+      "name": "Calculation Failed Message Pair",
+      "version": "1.0.0",
+      "description": "This message pair provides the request/response messages when a registry's calculation of a monitoring report fails and notifying the supplier of the error list so they can be addressed.",
+      "documentation": "",
+      "requestMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CalculateFailErrorsRequest",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CalculateFailErrorsRequest\",\"processedClaimId\": \"\",\"monitoringReportId\": \"\",\"dataType\": \"\",\"jsonData\": \"\",\"comment\": \"\"}"
+      },
+      "responseMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CalculateFailErrorsResponse",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CalculateFailErrorsResponse\",\"processedClaimId\": \"\",\"monitoringReportId\": \"\",\"variablesAdjusted\": [],\"comment\": \"\"}"
+      },
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "58847f92-ab78-4fde-a504-ea121fb0d3c8",
+      "name": "Calculation Succeed Adjustment Required Message Pair",
+      "version": "1.0.0",
+      "description": "This message pair provides the request/response messages when a calculation from the registry succeeds but the quantity calculated is outside the threshold set by the margin of error for the Registry Adapter.",
+      "documentation": "",
+      "requestMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CalculationSucceedAdjustmentRequest",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CalculationSucceedAdjustmentRequest\",\"processedClaimId\": \"\",\"monitoringReportId\": \"\",\"supplierCalculatedQuantity\": 0,\"registryCalculatedQuantity\": 0,\"percentMarginOfErrorSetting\": 0,\"comment\": \"\"}"
+      },
+      "responseMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.CalculationSucceedAdjustmentResponse",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.CalculationSucceedAdjustmentResponse\",\"processedClaimId\": \"\",\"monitoringReportId\": \"\",\"variablesAdjusted\": [],\"comment\": \"\"}"
+      },
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "45fb7e79-e26d-4d70-839e-85360ffcf5a7",
+      "name": "Verification Report Initialized",
+      "version": "1.0.0",
+      "description": "This message pair provides the request/response messages sent to the VVB that the Verification Report has been initialized and is ready for updating and submission.",
+      "documentation": "",
+      "requestMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.VerificationReportInitializedRequest",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.VerificationReportInitializedRequest\",\"processedClaimId\": \"\",\"monitoringReportId\": \"\",\"comment\": \"\"}"
+      },
+      "responseMessageDefinition": {
+        "dataSchemaOrType": "verra.ccs.extensionSet.VerificationReportInitializedResponse",
+        "definition": "{\"@type\": \"type.googleapis.com/verra.ccs.extensionSet.VerificationReportInitializedResponse\",\"processedClaimId\": \"\",\"monitoringReportId\": \"\",\"comment\": \"\"}"
+      },
+      "modules": [
+        "VM0049"
+      ]
+    }
+  ]
+}
