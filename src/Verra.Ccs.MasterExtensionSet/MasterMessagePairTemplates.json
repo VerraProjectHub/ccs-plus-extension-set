@@ -1,5 +1,5 @@
 {
-  "masterMessagePairs": [
+  "masterMessagePairTemplates": [
     {
       "id": "3bb83576-7696-4be5-aab3-1d24dfeefbc6",
       "name": "Calibrate Instrument Message Pair",
