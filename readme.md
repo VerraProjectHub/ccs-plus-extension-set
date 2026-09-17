@@ -61,7 +61,7 @@ Comprehensive documentation is available in the [docs](docs) directory:
 
 - .NET 10.0 or later
 - Microsoft Environmental Credit Service access
-- ECS SDK
+- [ECS SDK](https://github.com/earthxcg-oxy/ecssdk)
 
 ## License
 
@@ -72,3 +72,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Microsoft Environmental Credit Service](https://www.microsoft.com/en-us/sustainability/environmental-credit-service)
 - [Digital MRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v3/index.html)
 - [Verra Verra CCS+ Methodology](https://verra.org/methodologies/methodology-for-carbon-capture-and-storage/)
+- [EcsSdk](https://github.com/earthxcg-oxy/ecssdk)
