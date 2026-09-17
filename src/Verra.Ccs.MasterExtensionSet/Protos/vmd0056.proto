@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package verra.ccs.extensionSet.modules.vmd0056;
+
+//import "ccsMrvExtensionSet.proto";
+option csharp_namespace = "Verra.Ccs.ExtensionSet.Modules.Vmd0056";
+option java_package = "verra.ccs.extensionSet.modules.vmd0056";
+option java_multiple_files = true;
+

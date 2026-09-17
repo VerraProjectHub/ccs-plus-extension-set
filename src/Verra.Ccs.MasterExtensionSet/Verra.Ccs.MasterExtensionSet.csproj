@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Title>Carbon Capture and Storage Extension Set</Title>
+        <Description>For the Verra CCS+ set of methodologies VM0049, VMD0056, VMD0057, VMD0058, VMD0059</Description>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <PackageId>Verra.Ccs.MasterExtensionSet</PackageId>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <None Update="MasterExtensionSet.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="MasterFormulaTemplates.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="MasterMessagePairTemplates.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="MasterVariableTemplates.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="MasterEntityExtensionTemplates.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="IExtensionSetLibrary.cs">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="Docs\" />
+      <Folder Include="Modules\VM0049\" />
+      <Folder Include="Modules\VMD0056\" />
+      <Folder Include="Modules\VMD0058\" />
+      <Folder Include="Modules\VMD0057\" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.36.1" />
+    </ItemGroup>
+
+</Project>

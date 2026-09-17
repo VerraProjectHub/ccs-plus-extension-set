@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package verra.ccs.extensionSet.modules.vmd0058;
+option csharp_namespace = "Verra.Ccs.ExtensionSet.Modules.Vmd0058";
+option java_package = "verra.ccs.extensionSet.modules.vmd0058";
+option java_multiple_files = true;
+
+enum StorageType {
+    geological = 0;
+    saline_aquifer = 1;
+}
+
+
+

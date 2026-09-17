@@ -1,0 +1,199 @@
+{
+  "masterEntityExtensionTemplates": [
+    {
+      "id": "169a3a6e-dbde-4ec3-b5e1-1bae840e98a5",
+      "name": "Verra Project",
+      "version": "1.0.0",
+      "description": "This extension provides the Verra Registry Project data needed for interaction with the Registry and Project Portal",
+      "documentation": "https://verra.org/wp-content/project-metadata.pdf",
+      "extensionContext": "ActivityImpactModule",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VerraProject",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "6e354d0d-4e02-4d0a-8430-ee422030a15e",
+      "name": "Device Metadata",
+      "version": "1.0.0",
+      "description": "This extension provides a place to record the different instruments, i.e., sources, and their metadata, settings and calibrations.",
+      "documentation": "https://ccsplus.com/wp-content/uploads/2023/06/Instrument-Extension.pdf",
+      "extensionContext": "ClaimSource",
+      "dataSchemaOrType": "verra.ccs.extensionSet.DeviceMetadata",
+      "dataExample": "{ \"instrumentId\": \"123\", \"description\": \"A flow meter\", \"deviceMetadata\": { \"manufacturer\": \"Acme\" } }",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "c42ee56c-dc4f-4e50-868f-1535d217f794",
+      "name": "ECS Data Package File Metadata",
+      "version": "1.0.0",
+      "description": "Basic information for a file in a Data Package",
+      "documentation": "",
+      "extensionContext": "DataPackageManifest",
+      "dataSchemaOrType": "Metadata",
+      "dataExample": "{ \"properties\": [ { \"name\": \"File Name\", \"value\": \"a-file-name.json\" }, { \"name\": \"File Size\", \"value\": \"1000000\" } ] }",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "1a00284e-6cd1-486f-8630-91b58efae4c4",
+      "name": "VM0049 Options",
+      "version": "1.0.0",
+      "description": "This extension records the VM0049 options that will apply to all formula and variables for the module that are specific to each option.",
+      "documentation": "",
+      "extensionContext": "ExtensionSet",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VM0049Options",
+      "dataExample": "{ \"cO2MeasurementOption\": \"MassFlow\"}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "08e67d02-f35d-4361-b39f-f69d189f41a2",
+      "name": "VMD0056 Options",
+      "version": "1.0.0",
+      "description": "This extension records the VMD0056, DAC, options that will apply to all formula and variables for the module that are specific to each option.",
+      "documentation": "",
+      "extensionContext": "ExtensionSetModule",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VMD0056Options",
+      "dataExample": "{ \"usesFossilFuels\": true }",
+      "modules": [
+        "VMD0056"
+      ]
+    },
+    {
+      "id": "0f5e31e8-15a6-4b9b-9554-c2ce65500495",
+      "name": "VMD0057 Options",
+      "version": "1.0.0",
+      "description": "This extension records the VMD0057, CO2 Transport, options that will apply to all formula and variables for the module that are specific to each option.",
+      "documentation": "",
+      "extensionContext": "ExtensionSetModule",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VMD0057Options",
+      "dataExample": "{ \"usesFossilFuels\": true, \"directMonitoring\": false }",
+      "modules": [
+        "VMD0057"
+      ]
+    },
+    {
+      "id": "6d9a2629-b66b-4338-a210-3d176f4d9209",
+      "name": "VMD0058 Options",
+      "version": "1.0.0",
+      "description": "This extension records the VMD0058, CO2 Storage, options that will apply to all formula and variables for the module that are specific to each option.",
+      "documentation": "",
+      "extensionContext": "ExtensionSetModule",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VMD0058Options",
+      "dataExample": "{\"surfaceDischargeMeasurementOption\": \"MeasurementOfVenting\", \"intentionalSurfaceDischargeMeasurementOption\": \"MassFlow\", \"intentionalSubsurfaceDischargeMeasurementOption\": \"MassFlow\", \"unintentionalSurfaceDischargeEmissionSource\": \"FugitiveEmissions\"}",
+      "modules": [
+        "VMD0058"
+      ]
+    },
+    {
+      "id": "5523bc7c-0eb6-48c2-84a4-c032b8175fb9",
+      "name": "VMD0059 Options",
+      "version": "1.0.0",
+      "description": "This extension records the VMD0059, BECCS, options that will apply to all formula and variables for the module that are specific to each option.",
+      "documentation": "",
+      "extensionContext": "ExtensionSetModule",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VMD0059Options",
+      "dataExample": "{ \"calculatingLeakageFromBiomassCultivationOptions\": \"EmbodiedEmissionsFactor\" }",
+      "modules": [
+        "VMD0059"
+      ]
+    },
+    {
+      "id": "f3e2e2b1-1c7e-4f0c-8a4e-1d3f3e5b6c7d",
+      "name": "VT0013 Options",
+        "version": "1.0.0",
+        "description": "This extension records the VT0013, Differentiating Reductions and Removals in CCS Projects, options that will apply to all formula and variables for the module that are specific to each option.",
+        "documentation": "",
+        "extensionContext": "ExtensionSetModule",
+        "dataSchemaOrType": "verra.ccs.extensionSet.VT0013Options",
+        "dataExample": "{ \"allocateProjectAndLeakageEmissionOptions\": \"DifferentiationMethod\" }",
+        "modules": [
+            "VT0013"
+        ]
+    },
+    {
+      "id": "6001624e-64de-4d7f-88d8-ecbe61613618",
+      "name": "Variable Template Options",
+      "version": "1.0.0",
+      "description": "This extension applies to Variable Templates to record module specific options that can include or exclude variables based on the options selected.",
+      "documentation": "",
+      "extensionContext": "VariableTemplate",
+      "dataSchemaOrType": "verra.ccs.extensionSet.VariableTemplateOptions",
+      "dataExample": "{ \"appliesForCo2MeasurementType\": \"MASS_FLOW\", \"appliesForFossilFuelUse\": true, \"transportDirectMonitoring\": true, \"storageSurfaceDischargeMeasurementOption\": \"MEASUREMENT_OF_VENTING\", \"storageIntentionalSurfaceDischargeMeasurementOption\": \"FUGITIVE_EMISSIONS\", \"storageIntentionalSubsurfaceDischargeMeasurementOption\": \"MASS_FLOW\", \"storageUnintentionalSurfaceDischargeEmissionSource\": \"MASS_FLOW\", { \"beccsBiomassCultivationLeakageCalculation\": \"NOT_USED\", \"vt0013AllocateProjectAndLeakageEmissions\": \"DOES_NOT_APPLY\"  }",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+        "id": "88235b19-d674-4bbd-b918-36c42aeb2543",
+        "name": "Verra Claim Tracking",
+        "version": "1.0.0",
+        "description": "This extension is used to track the status of a processed claim's submission through the Verra reporting and issuance lifecycle.",
+        "documentation": "",
+        "extensionContext": "ProcessedClaim",
+        "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.VerraClaimTracking",
+        "dataExample": "{}",
+        "modules": [
+            "VM0049"
+        ]
+    },
+    {
+      "id": "6cd8d98b-4449-4bf3-bf1d-91cac429383a",
+      "name": "Verra Monitoring Report",
+      "version": "1.0.0",
+      "description": "This extension is used to record the Monitoring Report submitted for the Processed Claim.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.MonitoringReportResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "5869c637-ba77-42ff-98ee-d52acdf1428f",
+      "name": "Verra Verification Report",
+      "version": "1.0.0",
+      "description": "This extension is used to record the Verification Report submitted for the Processed Claim.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.VerificationReportResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "871ce3de-e79b-4598-8f6b-1b9ba27a800b",
+      "name": "Verra Calculate Err Result",
+      "version": "1.0.0",
+      "description": "This extension is used to record the calculation results returned by the Verra DMRV API.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.CalculateErrResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "3c389afe-a32f-4e05-b896-7ff79b15ced3",
+      "name": "Verra Credit Result",
+      "version": "1.0.0",
+      "description": "This extension is used to record the Verra credit issuance metadata.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.CreditIssuanceResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    }
+  ]
+}

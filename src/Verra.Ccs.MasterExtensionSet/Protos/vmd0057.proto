@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ccs.extensionSet.modules.vmd0057;
+
+option csharp_namespace = "Verra.Ccs.ExtensionSet.Modules.Vmd0057";
+option java_package = "verra.ccs.extensionSet.modules.vmd0057";
+option java_multiple_files = true;
+
+enum TransportType {
+  Road = 0;
+  Rail = 1;
+  Pipeline = 2;
+  Ship = 3;
+  Mixed = 4;
+}
+
+//entity extension
+message TransportProfile{
+  TransportType transport_type = 1;
+}

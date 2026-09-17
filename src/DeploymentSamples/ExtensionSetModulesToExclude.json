@@ -1,0 +1,6 @@
+{
+  "modulesToExclude":
+  [
+    "VMD0059", "VT0013", "VT0012", "VMD0062"
+  ]
+}
