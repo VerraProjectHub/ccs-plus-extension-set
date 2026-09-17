@@ -1,5 +1,7 @@
 # Verra CCS+ DMRV Master Master Extension Set Library
 
+## [Disclaimer](./DISCLAIMER)
+
 A library of assets that are composed into an IWA MRV Master Extension Set for Verra CCS+ modules is intended to be used with Microsoft [Environmental Credit Service](https://www.microsoft.com/en-us/sustainability/environmental-credit-service) or any other platform that is based on the [Digital MRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v4/index.html).
 
 ## Overview
@@ -65,7 +67,7 @@ Comprehensive documentation is available in the [docs](docs) directory:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## Related Projects
 
