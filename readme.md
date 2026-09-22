@@ -43,12 +43,13 @@ The model types for other platforms can be found in [models](./src/models/), cur
 
 ## Documentation
 
-Comprehensive documentation is available in the [docs](docs) directory:
+Documentation starts with the [dMRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v4/index.html), which provides the foundational concepts and specifications for implementing digital MRV (Measurement, Reporting, and Verification) systems.
 
-- **[Getting Started Guide](docs/Getting-Started.md)** - Quick start guide and basic usage
-- **[Modules](docs/modules)** - Verra CCS+ module documentation
+- **[Deployment Samples](./src/DeploymentSamples/readme.md)** - Deployment guide and basic usage using ECS as an example environment.
 
 ### Verra CCS+ Modules
+
+[VM0049 Methodology](https://verra.org/methodologies/methodology-for-carbon-capture-and-storage/)
 
 - **VM0049 Carbon Capture Module**
 - **VMD0056 Direct Air Capture (DAC) Module**
@@ -62,7 +63,7 @@ Comprehensive documentation is available in the [docs](docs) directory:
 ## Requirements
 
 - .NET 10.0 or later
-- Microsoft Environmental Credit Service access
+- Microsoft Environmental Credit Service access,contact [EarthXCG](https://www.earthxcg.com)
 - [ECS SDK](https://github.com/earthxcg-oxy/ecssdk)
 
 ## License
