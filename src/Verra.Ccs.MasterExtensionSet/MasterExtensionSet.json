@@ -1,52 +1,61 @@
 {
+  "id": "0781d830-c775-4738-8cac-bbab32b07c6f",
   "name": "Verra's VM0049 CCS+ Master Extension Set Template",
   "description": "Extension set for carbon capture and storage (CCS) projects",
   "version": "1.0",
   "documentation": "https://verra.org/methodologies/vm0049-carbon-capture-and-storage/",
   "masterExtensionSetModules": [
     {
+      "id": "7c4360ef-645a-475e-a241-46afab2dfbba",
       "name": "VM0049",
       "description": "Carbon Capture and Storage (CCS) module",
       "version": "1.0",
       "documentation": "https://verra.org/methodologies/vm0049-carbon-capture-and-storage/"
     },
     {
+      "id": "7bf529b0-5714-4840-bcab-448c5e73f41e",
       "name": "VMD0056",
       "description": "Direct Air Capture (DAC) module",
       "version": "1.0",
       "documentation": "https://verra.org/methodologies/vmd0056-co2-capture-from-air-direct-air-capture-v1-0/"
     },
     {
+      "id": "deaa6e70-2f3c-472e-a36e-64000393208e",
       "name": "VMD0057",
       "description": "CO2 Transport for CCS Projects module",
       "version": "1.0",
       "documentation": "https://verra.org/methodologies/vmd0057-co2-transport-for-ccs-projects-v1-0/"
     },
     {
+      "id": "c182854b-51ef-42cb-a8af-757375772fdb",
       "name": "VMD0058",
       "description": "VMD0058 CO2 Storage in Saline Aquifers and Depleted Hydrocarbon Reservoirs",
       "version": "1.0",
       "documentation": "https://verra.org/methodologies/vmd0058-co2-storage-in-saline-aquifers-and-depleted-hydrocarbon-reservoirs-v1-0/"
     },
     {
+      "id": "c6e2dcde-74b0-4088-88dd-6efbc8923e9d",
       "name": "VMD0059",
       "description": "VMD0059 CO2 Capture FROM Bioenergy (BECCS)",
       "version": "1.0",
       "documentation": "https://verra.org/wp-content/uploads/2025/04/VMD0059-CO2-Capture-from-Bioenergy-final-publication.pdf"
     },
     {
+      "id": "47aef02b-c540-43a8-9b4f-6bb84c5632a9",
       "name": "VMD0062",
       "description": "VMD0062 CO2 Capture FROM Natural Gas Processing",
       "version": "1.0",
       "documentation": "https://verra.org/wp-content/uploads/2025/12/VMD0062-CO2-Capture-from-Natural-Gas-Processing-v1.0.pdf"
     },
     {
+      "id": "a35a2c0c-f9d9-4504-bc88-197549ea1ee6",
       "name": "VT0012",
       "description": "VT0012 Accounting Non-VCS CO2 in CCS Projects",
       "version": "1.0",
       "documentation": "https://verra.org/wp-content/uploads/2025/04/VT0012-Non-VCS-CO2-in-CCS-Projects-final-publication.pdf"
     },
     {
+      "id": "068474f6-8c91-4979-8ace-1dacaa551346",
       "name": "VT0013",
       "description": "VT0013 Differentiating Reductions and Removals in CCS Projects, v1.0",
       "version": "1.0",
