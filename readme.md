@@ -6,7 +6,7 @@ A library of assets that are composed into an IWA MRV Master Extension Set for V
 
 ## Overview
 
-This library contains the MRV Extensions that are derived from the Verra CCS+ set of modules being governed and credits issued by [Verra](https://verra.org/methodologies/methodology-for-carbon-capture-and-storage/). The library is intended to be used with the [Digital MRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v4/index.html) and the [Environmental Credit Service](https://www.microsoft.com/en-us/sustainability/environmental-credit-service) to issue and manage carbon credits based on the Verra CCS+ methodology.
+This library contains the MRV Extensions that are derived from the Verra CCS+ set of modules being governed and credits issued by [Verra](https://verra.org/methodologies/methodology-for-carbon-capture-and-storage/). The library is intended to be used with the [Digital MRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v4/index.html) and the [Environmental Credit Service](http://www.earthxcg.com/) to issue and manage carbon credits based on the Verra CCS+ methodology.
 
 The Master Extension Set is installed on your platform or implementation that provides the template for creating Extension Sets that are configured and isolated for each project following the Verra CCS+ VM0049 methodology. For example, after installing the Master Extension Set on ECS or other implementation, you can create project-specific Extension Set from the master that includes only the modules your project will follow and then customize each Formula, Variable, Entity Extension and Message Pair template for your project's specific needs. Meaning, for variables that have a unit of measurement with multiple choices, i.e. `m3 or kg or GJ`, you can select the appropriate unit for your project, like `GJ`.
 
@@ -72,7 +72,7 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 
 ## Related Projects
 
-- [Microsoft Environmental Credit Service](https://www.microsoft.com/en-us/sustainability/environmental-credit-service)
+- [EarthXCG Environmental Credit Service](http://www.earthxcg.com/)
 - [Digital MRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v3/index.html)
 - [Verra Verra CCS+ Methodology](https://verra.org/methodologies/methodology-for-carbon-capture-and-storage/)
 - [EcsSdk](https://github.com/earthxcg-oxy/ecssdk)
