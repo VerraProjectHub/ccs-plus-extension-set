@@ -9416,7 +9416,7 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.repeatedFields_ = [2];
+proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.repeatedFields_ = [3];
 
 
 
@@ -9449,7 +9449,8 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.toObject 
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-checkpointId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+impactClaimId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+checkpointId: jspb.Message.getFieldWithDefault(msg, 2, ""),
 exceptionsList: jspb.Message.toObjectList(msg.getExceptionsList(),
     proto.verra.ccs.extensionSet.CheckpointNonConformanceException.toObject, includeInstance)
   };
@@ -9490,9 +9491,13 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.deserializeBinaryFr
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCheckpointId(value);
+      msg.setImpactClaimId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCheckpointId(value);
+      break;
+    case 3:
       var value = new proto.verra.ccs.extensionSet.CheckpointNonConformanceException;
       reader.readMessage(value,proto.verra.ccs.extensionSet.CheckpointNonConformanceException.deserializeBinaryFromReader);
       msg.addExceptions(value);
@@ -9526,17 +9531,24 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.serialize
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCheckpointId();
+  f = message.getImpactClaimId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
+  f = message.getCheckpointId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getExceptionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.verra.ccs.extensionSet.CheckpointNonConformanceException.serializeBinaryToWriter
     );
@@ -9545,10 +9557,10 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.serializeBinaryToWr
 
 
 /**
- * optional string checkpoint_id = 1;
+ * optional string impact_claim_id = 1;
  * @return {string}
  */
-proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.getCheckpointId = function() {
+proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.getImpactClaimId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -9557,18 +9569,36 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.getCheckp
  * @param {string} value
  * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest} returns this
  */
-proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.setCheckpointId = function(value) {
+proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.setImpactClaimId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * repeated CheckpointNonConformanceException exceptions = 2;
+ * optional string checkpoint_id = 2;
+ * @return {string}
+ */
+proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.getCheckpointId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest} returns this
+ */
+proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.setCheckpointId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated CheckpointNonConformanceException exceptions = 3;
  * @return {!Array<!proto.verra.ccs.extensionSet.CheckpointNonConformanceException>}
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.getExceptionsList = function() {
   return /** @type{!Array<!proto.verra.ccs.extensionSet.CheckpointNonConformanceException>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.verra.ccs.extensionSet.CheckpointNonConformanceException, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.verra.ccs.extensionSet.CheckpointNonConformanceException, 3));
 };
 
 
@@ -9577,7 +9607,7 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.getExcept
  * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest} returns this
 */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.setExceptionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -9587,7 +9617,7 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.setExcept
  * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceException}
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.addExceptions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.verra.ccs.extensionSet.CheckpointNonConformanceException, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.verra.ccs.extensionSet.CheckpointNonConformanceException, opt_index);
 };
 
 
@@ -9606,7 +9636,7 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceRequest.prototype.clearExce
  * @private {!Array<number>}
  * @const
  */
-proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.repeatedFields_ = [2];
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.repeatedFields_ = [4];
 
 
 
@@ -9639,7 +9669,9 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototyp
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-checkpointId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+impactClaimId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+checkpointId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+checkpointDeferred: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 mitigationsList: jspb.Message.toObjectList(msg.getMitigationsList(),
     proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation.toObject, includeInstance)
   };
@@ -9680,9 +9712,17 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.deserial
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCheckpointId(value);
+      msg.setImpactClaimId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCheckpointId(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCheckpointDeferred(value);
+      break;
+    case 4:
       var value = new proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation;
       reader.readMessage(value,proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation.deserializeBinaryFromReader);
       msg.addMitigations(value);
@@ -9716,17 +9756,31 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototyp
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCheckpointId();
+  f = message.getImpactClaimId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
+  f = message.getCheckpointId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCheckpointDeferred();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
   f = message.getMitigationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      4,
       f,
       proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation.serializeBinaryToWriter
     );
@@ -9735,10 +9789,10 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.serializ
 
 
 /**
- * optional string checkpoint_id = 1;
+ * optional string impact_claim_id = 1;
  * @return {string}
  */
-proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.getCheckpointId = function() {
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.getImpactClaimId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -9747,18 +9801,54 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototyp
  * @param {string} value
  * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse} returns this
  */
-proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.setCheckpointId = function(value) {
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.setImpactClaimId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * repeated CheckpointNonConformanceExceptionMitigation mitigations = 2;
+ * optional string checkpoint_id = 2;
+ * @return {string}
+ */
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.getCheckpointId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse} returns this
+ */
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.setCheckpointId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool checkpoint_deferred = 3;
+ * @return {boolean}
+ */
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.getCheckpointDeferred = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse} returns this
+ */
+proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.setCheckpointDeferred = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * repeated CheckpointNonConformanceExceptionMitigation mitigations = 4;
  * @return {!Array<!proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation>}
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.getMitigationsList = function() {
   return /** @type{!Array<!proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation, 4));
 };
 
 
@@ -9767,7 +9857,7 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototyp
  * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse} returns this
 */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.setMitigationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -9777,7 +9867,7 @@ proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototyp
  * @return {!proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation}
  */
 proto.verra.ccs.extensionSet.CheckpointNonConformanceMitigationResponse.prototype.addMitigations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.verra.ccs.extensionSet.CheckpointNonConformanceExceptionMitigation, opt_index);
 };
 
 

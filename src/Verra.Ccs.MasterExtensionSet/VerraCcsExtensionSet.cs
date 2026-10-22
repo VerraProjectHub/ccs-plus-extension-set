@@ -122,125 +122,126 @@ namespace Verra.Ccs.ExtensionSet {
             "EhMKC2Rlc2NyaXB0aW9uGAUgASgJIogBCitDaGVja3BvaW50Tm9uQ29uZm9y",
             "bWFuY2VFeGNlcHRpb25NaXRpZ2F0aW9uEhMKC3ZhcmlhYmxlX2lkGAEgASgJ",
             "EhcKD2NsYWltX3NvdXJjZV9pZBgCIAEoCRIWCg5hZGp1c3RlZF92YWx1ZRgD",
-            "IAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSKHAQofQ2hlY2twb2ludE5vbkNv",
-            "bmZvcm1hbmNlUmVxdWVzdBIVCg1jaGVja3BvaW50X2lkGAEgASgJEk0KCmV4",
-            "Y2VwdGlvbnMYAiADKAsyOS52ZXJyYS5jY3MuZXh0ZW5zaW9uU2V0LkNoZWNr",
-            "cG9pbnROb25Db25mb3JtYW5jZUV4Y2VwdGlvbiKdAQoqQ2hlY2twb2ludE5v",
-            "bkNvbmZvcm1hbmNlTWl0aWdhdGlvblJlc3BvbnNlEhUKDWNoZWNrcG9pbnRf",
-            "aWQYASABKAkSWAoLbWl0aWdhdGlvbnMYAiADKAsyQy52ZXJyYS5jY3MuZXh0",
-            "ZW5zaW9uU2V0LkNoZWNrcG9pbnROb25Db25mb3JtYW5jZUV4Y2VwdGlvbk1p",
-            "dGlnYXRpb24ijQEKGkNhbGN1bGF0ZUZhaWxFcnJvcnNSZXF1ZXN0EhoKEnBy",
-            "b2Nlc3NlZF9jbGFpbV9pZBgBIAEoCRIcChRtb25pdG9yaW5nX3JlcG9ydF9p",
-            "ZBgCIAEoCRIRCglkYXRhX3R5cGUYAyABKAkSEQoJanNvbl9kYXRhGAQgASgJ",
-            "Eg8KB2NvbW1lbnQYBSABKAkirgEKG0NhbGN1bGF0ZUZhaWxFcnJvcnNSZXNw",
-            "b25zZRIaChJwcm9jZXNzZWRfY2xhaW1faWQYASABKAkSHAoUbW9uaXRvcmlu",
-            "Z19yZXBvcnRfaWQYAiABKAkSRAoSdmFyaWFibGVzX2FkanVzdGVkGAMgAygL",
-            "MigudmVycmEuY2NzLmV4dGVuc2lvblNldC5WYXJpYWJsZUFkanVzdGVkEg8K",
-            "B2NvbW1lbnQYBCABKAkiiQEKEFZhcmlhYmxlQWRqdXN0ZWQSHgoWY2hlY2tw",
-            "b2ludF92YXJpYWJsZV9pZBgBIAEoCRITCgt0ZW1wbGF0ZV9pZBgCIAEoCRIY",
-            "ChB0ZW1wbGF0ZV92ZXJzaW9uGAMgASgJEhUKDXVwZGF0ZWRfdmFsdWUYBCAB",
-            "KAkSDwoHY29tbWVudBgFIAEoCSLlAQojQ2FsY3VsYXRpb25TdWNjZWVkQWRq",
-            "dXN0bWVudFJlcXVlc3QSGgoScHJvY2Vzc2VkX2NsYWltX2lkGAEgASgJEhwK",
-            "FG1vbml0b3JpbmdfcmVwb3J0X2lkGAIgASgJEiQKHHN1cHBsaWVyX2NhbGN1",
-            "bGF0ZWRfcXVhbnRpdHkYAyABKAESJAoccmVnaXN0cnlfY2FsY3VsYXRlZF9x",
-            "dWFudGl0eRgEIAEoARInCh9wZXJjZW50X21hcmdpbl9vZl9lcnJvcl9zZXR0",
-            "aW5nGAUgASgFEg8KB2NvbW1lbnQYBiABKAkitwEKJENhbGN1bGF0aW9uU3Vj",
-            "Y2VlZEFkanVzdG1lbnRSZXNwb25zZRIaChJwcm9jZXNzZWRfY2xhaW1faWQY",
-            "ASABKAkSHAoUbW9uaXRvcmluZ19yZXBvcnRfaWQYAiABKAkSRAoSdmFyaWFi",
-            "bGVzX2FkanVzdGVkGAMgAygLMigudmVycmEuY2NzLmV4dGVuc2lvblNldC5W",
-            "YXJpYWJsZUFkanVzdGVkEg8KB2NvbW1lbnQYBCABKAkicQokVmVyaWZpY2F0",
-            "aW9uUmVwb3J0SW5pdGlhbGl6ZWRSZXF1ZXN0EhoKEnByb2Nlc3NlZF9jbGFp",
-            "bV9pZBgBIAEoCRIcChRtb25pdG9yaW5nX1JlcG9ydF9pZBgCIAEoCRIPCgdj",
-            "b21tZW50GAMgASgJInIKJVZlcmlmaWNhdGlvblJlcG9ydEluaXRpYWxpemVk",
-            "UmVzcG9uc2USGgoScHJvY2Vzc2VkX2NsYWltX2lkGAEgASgJEhwKFG1vbml0",
-            "b3JpbmdfUmVwb3J0X2lkGAIgASgJEg8KB2NvbW1lbnQYAyABKAkigwEKDVZN",
-            "MDA0OU9wdGlvbnMSTAoWY28yX21lYXN1cmVtZW50X29wdGlvbhgBIAEoDjIs",
-            "LnZlcnJhLmNjcy5leHRlbnNpb25TZXQuQ08yTWVhc3VyZW1lbnRPcHRpb24S",
-            "JAocSXNNYXNzRnJhY3Rpb25PZkNvMkF2YWlsYWJsZRgCIAEoCCIrCg5WTUQw",
-            "MDU2T3B0aW9ucxIZChF1c2VzX2Zvc3NpbF9mdWVscxgBIAEoCCJGCg5WTUQw",
-            "MDU3T3B0aW9ucxIZChF1c2VzX2Zvc3NpbF9mdWVscxgBIAEoCBIZChFkaXJl",
-            "Y3RfbW9uaXRvcmluZxgCIAEoCCLZAwoOVk1EMDA1OE9wdGlvbnMScwoqaW50",
-            "ZW50aW9uYWxfZGlzY2hhcmdlX21lYXN1cmVtZW50X2FwcHJvYWNoGAEgASgO",
-            "Mj8udmVycmEuY2NzLmV4dGVuc2lvblNldC5JbnRlbnRpb25hbERpc2NoYXJn",
-            "ZU1lYXN1cmVtZW50QXBwcm9hY2gSZgowaW50ZW50aW9uYWxfc3VyZmFjZV9k",
-            "aXNjaGFyZ2VfbWVhc3VyZW1lbnRfb3B0aW9uGAIgASgOMiwudmVycmEuY2Nz",
-            "LmV4dGVuc2lvblNldC5DTzJNZWFzdXJlbWVudE9wdGlvbhJpCjNpbnRlbnRp",
-            "b25hbF9zdWJzdXJmYWNlX2Rpc2NoYXJnZV9tZWFzdXJlbWVudF9vcHRpb24Y",
-            "AyABKA4yLC52ZXJyYS5jY3MuZXh0ZW5zaW9uU2V0LkNPMk1lYXN1cmVtZW50",
-            "T3B0aW9uEn8KL3VuaW50ZW50aW9uYWxfc3VyZmFjZV9kaXNjaGFyZ2VfZW1p",
-            "c3Npb25fc291cmNlGAQgASgOMkYudmVycmEuY2NzLmV4dGVuc2lvblNldC5F",
-            "bWlzc2lvblNvdXJjZUZvclVuaW50ZW50aW9uYWxTdXJmYWNlRGlzY2hhcmdl",
-            "IpgBCg5WTUQwMDU5T3B0aW9ucxKFAQo0Y2FsY3VsYXRpbmdfbGVha2FnZV9m",
-            "cm9tX2Jpb21hc3NfY3VsdGl2YXRpb25fb3B0aW9ucxgBIAEoDjJHLnZlcnJh",
-            "LmNjcy5leHRlbnNpb25TZXQuQ2FsY3VsYXRpbmdMZWFrYWdlRnJvbUJpb21h",
-            "c3NDdWx0aXZhdGlvbk9wdGlvbnMiiAEKDVZUMDAxM09wdGlvbnMSdwotYWxs",
-            "b2NhdGVfcHJvamVjdF9hbmRfbGVha2FnZV9lbWlzc2lvbl9vcHRpb25zGAEg",
-            "ASgOMkAudmVycmEuY2NzLmV4dGVuc2lvblNldC5BbGxvY2F0ZVByb2plY3RB",
-            "bmRMZWFrYWdlRW1pc3Npb25PcHRpb25zIpAHChdWYXJpYWJsZVRlbXBsYXRl",
-            "T3B0aW9ucxJWCiBhcHBsaWVzX2Zvcl9jbzJfbWVhc3VyZW1lbnRfdHlwZRgB",
-            "IAEoDjIsLnZlcnJhLmNjcy5leHRlbnNpb25TZXQuQ08yTWVhc3VyZW1lbnRP",
-            "cHRpb24SIwobYXBwbGllc19mb3JfZm9zc2lsX2Z1ZWxfdXNlGAIgASgIEiMK",
-            "G3RyYW5zcG9ydF9kaXJlY3RfbW9uaXRvcmluZxgDIAEoCBJ7CjJzdG9yYWdl",
-            "X2ludGVudGlvbmFsX2Rpc2NoYXJnZV9tZWFzdXJlbWVudF9hcHByb2FjaBgE",
-            "IAEoDjI/LnZlcnJhLmNjcy5leHRlbnNpb25TZXQuSW50ZW50aW9uYWxEaXNj",
-            "aGFyZ2VNZWFzdXJlbWVudEFwcHJvYWNoEmcKMXN0b3JhZ2Vfc3VyZmFjZV9p",
-            "bnRlbnRpb25hbF9kaXNjaGFyZ2VfbWVhc3VyZW1lbnQYBSABKA4yLC52ZXJy",
-            "YS5jY3MuZXh0ZW5zaW9uU2V0LkNPMk1lYXN1cmVtZW50T3B0aW9uEmoKNHN0",
-            "b3JhZ2Vfc3Vic3VyZmFjZV9pbnRlbnRpb25hbF9kaXNjaGFyZ2VfbWVhc3Vy",
-            "ZW1lbnQYBiABKA4yLC52ZXJyYS5jY3MuZXh0ZW5zaW9uU2V0LkNPMk1lYXN1",
-            "cmVtZW50T3B0aW9uEocBCjdzdG9yYWdlX3VuaW50ZW50aW9uYWxfc3VyZmFj",
-            "ZV9kaXNjaGFyZ2VfZW1pc3Npb25fc291cmNlGAcgASgOMkYudmVycmEuY2Nz",
-            "LmV4dGVuc2lvblNldC5FbWlzc2lvblNvdXJjZUZvclVuaW50ZW50aW9uYWxT",
-            "dXJmYWNlRGlzY2hhcmdlEn4KLWJlY2NzX2Jpb21hc3NfY3VsdGl2YXRpb25f",
-            "bGVha2FnZV9jYWxjdWxhdGlvbhgIIAEoDjJHLnZlcnJhLmNjcy5leHRlbnNp",
-            "b25TZXQuQ2FsY3VsYXRpbmdMZWFrYWdlRnJvbUJpb21hc3NDdWx0aXZhdGlv",
-            "bk9wdGlvbnMSdwotdnQwMDEzX2FsbG9jYXRlX3Byb2plY3RfYW5kX2xlYWth",
-            "Z2VfZW1pc3Npb25zGAkgASgOMkAudmVycmEuY2NzLmV4dGVuc2lvblNldC5B",
-            "bGxvY2F0ZVByb2plY3RBbmRMZWFrYWdlRW1pc3Npb25PcHRpb25zIt0DCgxW",
-            "ZXJyYVByb2plY3QSCgoCaWQYASABKAkSFgoOcHJvamVjdF9udW1iZXIYAiAB",
-            "KAkSEgoKcHJvamVjdF9pZBgDIAEoCRISCgphY2NvdW50X2lkGAQgASgJEhoK",
-            "EnByb2plY3RfcHJvcG9uZW50cxgFIAMoCRIZChFzdGFuZGFyZF90ZW1wbGF0",
-            "ZRgGIAEoCRIeChZzdGFuZGFyZF90ZW1wbGF0ZV9uYW1lGAcgASgJEiIKGm1l",
-            "dGhvZG9sb2d5X3RlbXBsYXRlX3RpdGxlGAggASgJEhwKFG1ldGhvZG9sb2d5",
-            "X3RlbXBsYXRlGAkgASgJEh4KFm1vbml0b3JpbmdfcmVwb3J0X25hbWUYCiAB",
-            "KAkSGQoRc3VibWlzc2lvbl9zdGF0dXMYCyABKAkSFAoMcHJvamVjdF9uYW1l",
-            "GAwgASgJEjUKLWZldGNoX3Byb2plY3RfYm91bmRhcnlfZnJvbV9jYWxjdWxh",
-            "dGlvbl9pbnB1dBgNIAEoCBIkChxlc3RpbWF0ZWRfcHJvamVjdF9zdGFydF9k",
-            "YXRlGA4gASgJEjoKCWxvY2F0aW9ucxgPIAMoCzInLnZlcnJhLmNjcy5leHRl",
-            "bnNpb25TZXQuUHJvamVjdExvY2F0aW9uIusBCg9Qcm9qZWN0TG9jYXRpb24S",
-            "GAoQcHJvamVjdF9pbnN0YW5jZRgBIAEoCRIPCgdjb3VudHJ5GAIgASgJEgwK",
-            "BGNpdHkYAyABKAkSFgoOc3RhdGVfcHJvdmluY2UYBCABKAkSFAoMbGF0aXR1",
-            "ZGVfZF9kGAUgASgJEhUKDWxvbmdpdHVkZV9kX2QYBiABKAkSFgoObGF0aXR1",
-            "ZGVfZF9tX3MYByABKAkSFwoPbG9uZ2l0dWRlX2RfbV9zGAggASgJEhYKDmFj",
-            "cmVzX2hlY3RhcmVzGAkgASgJEhEKCWFyZWFfdW5pdBgKIAEoCSKGAQofVmVy",
-            "cmFSZWdpc3RyeUFnZW50Q29uZmlndXJhdGlvbhIqCiJ0aHJlc2hvbGRfZm9y",
-            "X21hcmdpbl9vZl9kaWZmZXJlbmNlGAEgASgFEhEKCWNsaWVudF9pZBgCIAEo",
-            "CRINCgVzY29wZRgDIAEoCRIVCg1jYWxsX2JhY2tfdXJsGAQgASgJKqEBCghG",
-            "dWVsVHlwZRILCgdVTktOT1dOEAASDwoLTkFUVVJBTF9HQVMQARIKCgZESUVT",
-            "RUwQAhIMCghHQVNPTElORRADEggKBENPQUwQBBILCgdCSU9NQVNTEAUSDQoJ",
-            "QlJJTkVfR0FTEAYSDwoLRUxFQ1RSSUNJVFkQBxIHCgNLT0gQCBIJCgVDYUNP",
-            "MxAJEgcKA0NhTxAKEgkKBU9USEVSEDIqRAoMRW1pc3Npb25UeXBlEhkKFUVN",
-            "SVNTSU9OX1RZUEVfVU5LTk9XThAAEgcKA0NPMhABEgcKA0NINBACEgcKA04y",
-            "TxADKksKGVZlcmlmaWNhdGlvbkV4Y2VwdGlvblR5cGUSEwoPTEVER0VSX1ZB",
-            "UklBQkxFEAASGQoVREFUQV9QQUNLQUdFX1ZBUklBQkxFEAEqcQoUQ08yTWVh",
-            "c3VyZW1lbnRPcHRpb24SEgoOTk9UX0FQUExJQ0FCTEUQABINCglNQVNTX0ZM",
-            "T1cQARITCg9WT0xVTUVUUklDX0ZMT1cQAhIhCh1CT1RIX01BU1NfQU5EX1ZP",
-            "TFVNRVRSSUNfRkxPVxADKtABCidJbnRlbnRpb25hbERpc2NoYXJnZU1lYXN1",
-            "cmVtZW50QXBwcm9hY2gSFQoRSVNfTk9UX0FQUExJQ0FCTEUQABIaChZNRUFT",
-            "VVJFTUVOVF9PRl9WRU5USU5HEAESNgoyRVNUSU1BVElPTl9PRl9TVVJGQUNF",
-            "X1ZFTlRJTkdfRk9SX0lTT0xBVEVEX1ZPTFVNRVMQAhI6CjZFU1RJTUFUSU9O",
-            "X09GX1NVUkZBQ0VfVkVOVElOR19GT1JfTk9OX0lTT0xBVEVEX1ZPTFVNRVMQ",
-            "Ayp/Ci5FbWlzc2lvblNvdXJjZUZvclVuaW50ZW50aW9uYWxTdXJmYWNlRGlz",
-            "Y2hhcmdlEhAKDERPRVNOVF9BUFBMWRAAEhYKEkZVR0lUSVZFX0VNSVNTSU9O",
-            "UxABEhkKFVJVUFRVUkVfT1JfTElORV9CUkVBSxACEggKBEJPVEgQAyqSAQov",
-            "Q2FsY3VsYXRpbmdMZWFrYWdlRnJvbUJpb21hc3NDdWx0aXZhdGlvbk9wdGlv",
-            "bnMSDAoITk9UX1VTRUQQABIRCg1ERUZBVUxUX1ZBTFVFEAESHQoZRU1CT0RJ",
-            "RURfRU1JU1NJT05TX0ZBQ1RPUhACEh8KG0NBTENVTEFURV9MRUFLQUdFX0VN",
-            "SVNTSU9OUxADKnMKKEFsbG9jYXRlUHJvamVjdEFuZExlYWthZ2VFbWlzc2lv",
-            "bk9wdGlvbnMSEgoORE9FU19OT1RfQVBQTFkQABIaChZESUZGRVJFTlRJQVRJ",
-            "T05fTUVUSE9EEAESFwoTTUFTU19CQUxBTkNFX01FVEhPRBACQjMKFnZlcnJh",
-            "LmNjcy5leHRlbnNpb25TZXRQAaoCFlZlcnJhLkNjcy5FeHRlbnNpb25TZXRi",
-            "BnByb3RvMw=="));
+            "IAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSKgAQofQ2hlY2twb2ludE5vbkNv",
+            "bmZvcm1hbmNlUmVxdWVzdBIXCg9pbXBhY3RfY2xhaW1faWQYASABKAkSFQoN",
+            "Y2hlY2twb2ludF9pZBgCIAEoCRJNCgpleGNlcHRpb25zGAMgAygLMjkudmVy",
+            "cmEuY2NzLmV4dGVuc2lvblNldC5DaGVja3BvaW50Tm9uQ29uZm9ybWFuY2VF",
+            "eGNlcHRpb24i0wEKKkNoZWNrcG9pbnROb25Db25mb3JtYW5jZU1pdGlnYXRp",
+            "b25SZXNwb25zZRIXCg9pbXBhY3RfY2xhaW1faWQYASABKAkSFQoNY2hlY2tw",
+            "b2ludF9pZBgCIAEoCRIbChNjaGVja3BvaW50X2RlZmVycmVkGAMgASgIElgK",
+            "C21pdGlnYXRpb25zGAQgAygLMkMudmVycmEuY2NzLmV4dGVuc2lvblNldC5D",
+            "aGVja3BvaW50Tm9uQ29uZm9ybWFuY2VFeGNlcHRpb25NaXRpZ2F0aW9uIo0B",
+            "ChpDYWxjdWxhdGVGYWlsRXJyb3JzUmVxdWVzdBIaChJwcm9jZXNzZWRfY2xh",
+            "aW1faWQYASABKAkSHAoUbW9uaXRvcmluZ19yZXBvcnRfaWQYAiABKAkSEQoJ",
+            "ZGF0YV90eXBlGAMgASgJEhEKCWpzb25fZGF0YRgEIAEoCRIPCgdjb21tZW50",
+            "GAUgASgJIq4BChtDYWxjdWxhdGVGYWlsRXJyb3JzUmVzcG9uc2USGgoScHJv",
+            "Y2Vzc2VkX2NsYWltX2lkGAEgASgJEhwKFG1vbml0b3JpbmdfcmVwb3J0X2lk",
+            "GAIgASgJEkQKEnZhcmlhYmxlc19hZGp1c3RlZBgDIAMoCzIoLnZlcnJhLmNj",
+            "cy5leHRlbnNpb25TZXQuVmFyaWFibGVBZGp1c3RlZBIPCgdjb21tZW50GAQg",
+            "ASgJIokBChBWYXJpYWJsZUFkanVzdGVkEh4KFmNoZWNrcG9pbnRfdmFyaWFi",
+            "bGVfaWQYASABKAkSEwoLdGVtcGxhdGVfaWQYAiABKAkSGAoQdGVtcGxhdGVf",
+            "dmVyc2lvbhgDIAEoCRIVCg11cGRhdGVkX3ZhbHVlGAQgASgJEg8KB2NvbW1l",
+            "bnQYBSABKAki5QEKI0NhbGN1bGF0aW9uU3VjY2VlZEFkanVzdG1lbnRSZXF1",
+            "ZXN0EhoKEnByb2Nlc3NlZF9jbGFpbV9pZBgBIAEoCRIcChRtb25pdG9yaW5n",
+            "X3JlcG9ydF9pZBgCIAEoCRIkChxzdXBwbGllcl9jYWxjdWxhdGVkX3F1YW50",
+            "aXR5GAMgASgBEiQKHHJlZ2lzdHJ5X2NhbGN1bGF0ZWRfcXVhbnRpdHkYBCAB",
+            "KAESJwofcGVyY2VudF9tYXJnaW5fb2ZfZXJyb3Jfc2V0dGluZxgFIAEoBRIP",
+            "Cgdjb21tZW50GAYgASgJIrcBCiRDYWxjdWxhdGlvblN1Y2NlZWRBZGp1c3Rt",
+            "ZW50UmVzcG9uc2USGgoScHJvY2Vzc2VkX2NsYWltX2lkGAEgASgJEhwKFG1v",
+            "bml0b3JpbmdfcmVwb3J0X2lkGAIgASgJEkQKEnZhcmlhYmxlc19hZGp1c3Rl",
+            "ZBgDIAMoCzIoLnZlcnJhLmNjcy5leHRlbnNpb25TZXQuVmFyaWFibGVBZGp1",
+            "c3RlZBIPCgdjb21tZW50GAQgASgJInEKJFZlcmlmaWNhdGlvblJlcG9ydElu",
+            "aXRpYWxpemVkUmVxdWVzdBIaChJwcm9jZXNzZWRfY2xhaW1faWQYASABKAkS",
+            "HAoUbW9uaXRvcmluZ19SZXBvcnRfaWQYAiABKAkSDwoHY29tbWVudBgDIAEo",
+            "CSJyCiVWZXJpZmljYXRpb25SZXBvcnRJbml0aWFsaXplZFJlc3BvbnNlEhoK",
+            "EnByb2Nlc3NlZF9jbGFpbV9pZBgBIAEoCRIcChRtb25pdG9yaW5nX1JlcG9y",
+            "dF9pZBgCIAEoCRIPCgdjb21tZW50GAMgASgJIoMBCg1WTTAwNDlPcHRpb25z",
+            "EkwKFmNvMl9tZWFzdXJlbWVudF9vcHRpb24YASABKA4yLC52ZXJyYS5jY3Mu",
+            "ZXh0ZW5zaW9uU2V0LkNPMk1lYXN1cmVtZW50T3B0aW9uEiQKHElzTWFzc0Zy",
+            "YWN0aW9uT2ZDbzJBdmFpbGFibGUYAiABKAgiKwoOVk1EMDA1Nk9wdGlvbnMS",
+            "GQoRdXNlc19mb3NzaWxfZnVlbHMYASABKAgiRgoOVk1EMDA1N09wdGlvbnMS",
+            "GQoRdXNlc19mb3NzaWxfZnVlbHMYASABKAgSGQoRZGlyZWN0X21vbml0b3Jp",
+            "bmcYAiABKAgi2QMKDlZNRDAwNThPcHRpb25zEnMKKmludGVudGlvbmFsX2Rp",
+            "c2NoYXJnZV9tZWFzdXJlbWVudF9hcHByb2FjaBgBIAEoDjI/LnZlcnJhLmNj",
+            "cy5leHRlbnNpb25TZXQuSW50ZW50aW9uYWxEaXNjaGFyZ2VNZWFzdXJlbWVu",
+            "dEFwcHJvYWNoEmYKMGludGVudGlvbmFsX3N1cmZhY2VfZGlzY2hhcmdlX21l",
+            "YXN1cmVtZW50X29wdGlvbhgCIAEoDjIsLnZlcnJhLmNjcy5leHRlbnNpb25T",
+            "ZXQuQ08yTWVhc3VyZW1lbnRPcHRpb24SaQozaW50ZW50aW9uYWxfc3Vic3Vy",
+            "ZmFjZV9kaXNjaGFyZ2VfbWVhc3VyZW1lbnRfb3B0aW9uGAMgASgOMiwudmVy",
+            "cmEuY2NzLmV4dGVuc2lvblNldC5DTzJNZWFzdXJlbWVudE9wdGlvbhJ/Ci91",
+            "bmludGVudGlvbmFsX3N1cmZhY2VfZGlzY2hhcmdlX2VtaXNzaW9uX3NvdXJj",
+            "ZRgEIAEoDjJGLnZlcnJhLmNjcy5leHRlbnNpb25TZXQuRW1pc3Npb25Tb3Vy",
+            "Y2VGb3JVbmludGVudGlvbmFsU3VyZmFjZURpc2NoYXJnZSKYAQoOVk1EMDA1",
+            "OU9wdGlvbnMShQEKNGNhbGN1bGF0aW5nX2xlYWthZ2VfZnJvbV9iaW9tYXNz",
+            "X2N1bHRpdmF0aW9uX29wdGlvbnMYASABKA4yRy52ZXJyYS5jY3MuZXh0ZW5z",
+            "aW9uU2V0LkNhbGN1bGF0aW5nTGVha2FnZUZyb21CaW9tYXNzQ3VsdGl2YXRp",
+            "b25PcHRpb25zIogBCg1WVDAwMTNPcHRpb25zEncKLWFsbG9jYXRlX3Byb2pl",
+            "Y3RfYW5kX2xlYWthZ2VfZW1pc3Npb25fb3B0aW9ucxgBIAEoDjJALnZlcnJh",
+            "LmNjcy5leHRlbnNpb25TZXQuQWxsb2NhdGVQcm9qZWN0QW5kTGVha2FnZUVt",
+            "aXNzaW9uT3B0aW9ucyKQBwoXVmFyaWFibGVUZW1wbGF0ZU9wdGlvbnMSVgog",
+            "YXBwbGllc19mb3JfY28yX21lYXN1cmVtZW50X3R5cGUYASABKA4yLC52ZXJy",
+            "YS5jY3MuZXh0ZW5zaW9uU2V0LkNPMk1lYXN1cmVtZW50T3B0aW9uEiMKG2Fw",
+            "cGxpZXNfZm9yX2Zvc3NpbF9mdWVsX3VzZRgCIAEoCBIjCht0cmFuc3BvcnRf",
+            "ZGlyZWN0X21vbml0b3JpbmcYAyABKAgSewoyc3RvcmFnZV9pbnRlbnRpb25h",
+            "bF9kaXNjaGFyZ2VfbWVhc3VyZW1lbnRfYXBwcm9hY2gYBCABKA4yPy52ZXJy",
+            "YS5jY3MuZXh0ZW5zaW9uU2V0LkludGVudGlvbmFsRGlzY2hhcmdlTWVhc3Vy",
+            "ZW1lbnRBcHByb2FjaBJnCjFzdG9yYWdlX3N1cmZhY2VfaW50ZW50aW9uYWxf",
+            "ZGlzY2hhcmdlX21lYXN1cmVtZW50GAUgASgOMiwudmVycmEuY2NzLmV4dGVu",
+            "c2lvblNldC5DTzJNZWFzdXJlbWVudE9wdGlvbhJqCjRzdG9yYWdlX3N1YnN1",
+            "cmZhY2VfaW50ZW50aW9uYWxfZGlzY2hhcmdlX21lYXN1cmVtZW50GAYgASgO",
+            "MiwudmVycmEuY2NzLmV4dGVuc2lvblNldC5DTzJNZWFzdXJlbWVudE9wdGlv",
+            "bhKHAQo3c3RvcmFnZV91bmludGVudGlvbmFsX3N1cmZhY2VfZGlzY2hhcmdl",
+            "X2VtaXNzaW9uX3NvdXJjZRgHIAEoDjJGLnZlcnJhLmNjcy5leHRlbnNpb25T",
+            "ZXQuRW1pc3Npb25Tb3VyY2VGb3JVbmludGVudGlvbmFsU3VyZmFjZURpc2No",
+            "YXJnZRJ+Ci1iZWNjc19iaW9tYXNzX2N1bHRpdmF0aW9uX2xlYWthZ2VfY2Fs",
+            "Y3VsYXRpb24YCCABKA4yRy52ZXJyYS5jY3MuZXh0ZW5zaW9uU2V0LkNhbGN1",
+            "bGF0aW5nTGVha2FnZUZyb21CaW9tYXNzQ3VsdGl2YXRpb25PcHRpb25zEncK",
+            "LXZ0MDAxM19hbGxvY2F0ZV9wcm9qZWN0X2FuZF9sZWFrYWdlX2VtaXNzaW9u",
+            "cxgJIAEoDjJALnZlcnJhLmNjcy5leHRlbnNpb25TZXQuQWxsb2NhdGVQcm9q",
+            "ZWN0QW5kTGVha2FnZUVtaXNzaW9uT3B0aW9ucyLdAwoMVmVycmFQcm9qZWN0",
+            "EgoKAmlkGAEgASgJEhYKDnByb2plY3RfbnVtYmVyGAIgASgJEhIKCnByb2pl",
+            "Y3RfaWQYAyABKAkSEgoKYWNjb3VudF9pZBgEIAEoCRIaChJwcm9qZWN0X3By",
+            "b3BvbmVudHMYBSADKAkSGQoRc3RhbmRhcmRfdGVtcGxhdGUYBiABKAkSHgoW",
+            "c3RhbmRhcmRfdGVtcGxhdGVfbmFtZRgHIAEoCRIiChptZXRob2RvbG9neV90",
+            "ZW1wbGF0ZV90aXRsZRgIIAEoCRIcChRtZXRob2RvbG9neV90ZW1wbGF0ZRgJ",
+            "IAEoCRIeChZtb25pdG9yaW5nX3JlcG9ydF9uYW1lGAogASgJEhkKEXN1Ym1p",
+            "c3Npb25fc3RhdHVzGAsgASgJEhQKDHByb2plY3RfbmFtZRgMIAEoCRI1Ci1m",
+            "ZXRjaF9wcm9qZWN0X2JvdW5kYXJ5X2Zyb21fY2FsY3VsYXRpb25faW5wdXQY",
+            "DSABKAgSJAocZXN0aW1hdGVkX3Byb2plY3Rfc3RhcnRfZGF0ZRgOIAEoCRI6",
+            "Cglsb2NhdGlvbnMYDyADKAsyJy52ZXJyYS5jY3MuZXh0ZW5zaW9uU2V0LlBy",
+            "b2plY3RMb2NhdGlvbiLrAQoPUHJvamVjdExvY2F0aW9uEhgKEHByb2plY3Rf",
+            "aW5zdGFuY2UYASABKAkSDwoHY291bnRyeRgCIAEoCRIMCgRjaXR5GAMgASgJ",
+            "EhYKDnN0YXRlX3Byb3ZpbmNlGAQgASgJEhQKDGxhdGl0dWRlX2RfZBgFIAEo",
+            "CRIVCg1sb25naXR1ZGVfZF9kGAYgASgJEhYKDmxhdGl0dWRlX2RfbV9zGAcg",
+            "ASgJEhcKD2xvbmdpdHVkZV9kX21fcxgIIAEoCRIWCg5hY3Jlc19oZWN0YXJl",
+            "cxgJIAEoCRIRCglhcmVhX3VuaXQYCiABKAkihgEKH1ZlcnJhUmVnaXN0cnlB",
+            "Z2VudENvbmZpZ3VyYXRpb24SKgoidGhyZXNob2xkX2Zvcl9tYXJnaW5fb2Zf",
+            "ZGlmZmVyZW5jZRgBIAEoBRIRCgljbGllbnRfaWQYAiABKAkSDQoFc2NvcGUY",
+            "AyABKAkSFQoNY2FsbF9iYWNrX3VybBgEIAEoCSqhAQoIRnVlbFR5cGUSCwoH",
+            "VU5LTk9XThAAEg8KC05BVFVSQUxfR0FTEAESCgoGRElFU0VMEAISDAoIR0FT",
+            "T0xJTkUQAxIICgRDT0FMEAQSCwoHQklPTUFTUxAFEg0KCUJSSU5FX0dBUxAG",
+            "Eg8KC0VMRUNUUklDSVRZEAcSBwoDS09IEAgSCQoFQ2FDTzMQCRIHCgNDYU8Q",
+            "ChIJCgVPVEhFUhAyKkQKDEVtaXNzaW9uVHlwZRIZChVFTUlTU0lPTl9UWVBF",
+            "X1VOS05PV04QABIHCgNDTzIQARIHCgNDSDQQAhIHCgNOMk8QAypLChlWZXJp",
+            "ZmljYXRpb25FeGNlcHRpb25UeXBlEhMKD0xFREdFUl9WQVJJQUJMRRAAEhkK",
+            "FURBVEFfUEFDS0FHRV9WQVJJQUJMRRABKnEKFENPMk1lYXN1cmVtZW50T3B0",
+            "aW9uEhIKDk5PVF9BUFBMSUNBQkxFEAASDQoJTUFTU19GTE9XEAESEwoPVk9M",
+            "VU1FVFJJQ19GTE9XEAISIQodQk9USF9NQVNTX0FORF9WT0xVTUVUUklDX0ZM",
+            "T1cQAyrQAQonSW50ZW50aW9uYWxEaXNjaGFyZ2VNZWFzdXJlbWVudEFwcHJv",
+            "YWNoEhUKEUlTX05PVF9BUFBMSUNBQkxFEAASGgoWTUVBU1VSRU1FTlRfT0Zf",
+            "VkVOVElORxABEjYKMkVTVElNQVRJT05fT0ZfU1VSRkFDRV9WRU5USU5HX0ZP",
+            "Ul9JU09MQVRFRF9WT0xVTUVTEAISOgo2RVNUSU1BVElPTl9PRl9TVVJGQUNF",
+            "X1ZFTlRJTkdfRk9SX05PTl9JU09MQVRFRF9WT0xVTUVTEAMqfwouRW1pc3Np",
+            "b25Tb3VyY2VGb3JVbmludGVudGlvbmFsU3VyZmFjZURpc2NoYXJnZRIQCgxE",
+            "T0VTTlRfQVBQTFkQABIWChJGVUdJVElWRV9FTUlTU0lPTlMQARIZChVSVVBU",
+            "VVJFX09SX0xJTkVfQlJFQUsQAhIICgRCT1RIEAMqkgEKL0NhbGN1bGF0aW5n",
+            "TGVha2FnZUZyb21CaW9tYXNzQ3VsdGl2YXRpb25PcHRpb25zEgwKCE5PVF9V",
+            "U0VEEAASEQoNREVGQVVMVF9WQUxVRRABEh0KGUVNQk9ESUVEX0VNSVNTSU9O",
+            "U19GQUNUT1IQAhIfChtDQUxDVUxBVEVfTEVBS0FHRV9FTUlTU0lPTlMQAypz",
+            "CihBbGxvY2F0ZVByb2plY3RBbmRMZWFrYWdlRW1pc3Npb25PcHRpb25zEhIK",
+            "DkRPRVNfTk9UX0FQUExZEAASGgoWRElGRkVSRU5USUFUSU9OX01FVEhPRBAB",
+            "EhcKE01BU1NfQkFMQU5DRV9NRVRIT0QQAkIzChZ2ZXJyYS5jY3MuZXh0ZW5z",
+            "aW9uU2V0UAGqAhZWZXJyYS5DY3MuRXh0ZW5zaW9uU2V0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Verra.Ccs.ExtensionSet.FuelType), typeof(global::Verra.Ccs.ExtensionSet.EmissionType), typeof(global::Verra.Ccs.ExtensionSet.VerificationExceptionType), typeof(global::Verra.Ccs.ExtensionSet.CO2MeasurementOption), typeof(global::Verra.Ccs.ExtensionSet.IntentionalDischargeMeasurementApproach), typeof(global::Verra.Ccs.ExtensionSet.EmissionSourceForUnintentionalSurfaceDischarge), typeof(global::Verra.Ccs.ExtensionSet.CalculatingLeakageFromBiomassCultivationOptions), typeof(global::Verra.Ccs.ExtensionSet.AllocateProjectAndLeakageEmissionOptions), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -282,8 +283,8 @@ namespace Verra.Ccs.ExtensionSet {
             new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CoriolisMeterCalibrationData), global::Verra.Ccs.ExtensionSet.CoriolisMeterCalibrationData.Parser, new[]{ "ZeroFlowOffset", "Span", "ZeroFlowOffsetUOM", "SpanUOM" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException), global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException.Parser, new[]{ "ExceptionType", "VariableId", "ClaimSourceId", "ProposedVerifiedValue", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation), global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation.Parser, new[]{ "VariableId", "ClaimSourceId", "AdjustedValue", "Description" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceRequest), global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceRequest.Parser, new[]{ "CheckpointId", "Exceptions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceMitigationResponse), global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceMitigationResponse.Parser, new[]{ "CheckpointId", "Mitigations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceRequest), global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceRequest.Parser, new[]{ "ImpactClaimId", "CheckpointId", "Exceptions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceMitigationResponse), global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceMitigationResponse.Parser, new[]{ "ImpactClaimId", "CheckpointId", "CheckpointDeferred", "Mitigations" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CalculateFailErrorsRequest), global::Verra.Ccs.ExtensionSet.CalculateFailErrorsRequest.Parser, new[]{ "ProcessedClaimId", "MonitoringReportId", "DataType", "JsonData", "Comment" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.CalculateFailErrorsResponse), global::Verra.Ccs.ExtensionSet.CalculateFailErrorsResponse.Parser, new[]{ "ProcessedClaimId", "MonitoringReportId", "VariablesAdjusted", "Comment" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Verra.Ccs.ExtensionSet.VariableAdjusted), global::Verra.Ccs.ExtensionSet.VariableAdjusted.Parser, new[]{ "CheckpointVariableId", "TemplateId", "TemplateVersion", "UpdatedValue", "Comment" }, null, null, null, null),
@@ -11939,6 +11940,7 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CheckpointNonConformanceRequest(CheckpointNonConformanceRequest other) : this() {
+      impactClaimId_ = other.impactClaimId_;
       checkpointId_ = other.checkpointId_;
       exceptions_ = other.exceptions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -11950,8 +11952,23 @@ namespace Verra.Ccs.ExtensionSet {
       return new CheckpointNonConformanceRequest(this);
     }
 
+    /// <summary>Field number for the "impact_claim_id" field.</summary>
+    public const int ImpactClaimIdFieldNumber = 1;
+    private string impactClaimId_ = "";
+    /// <summary>
+    ///id of the impact claim with the exception
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ImpactClaimId {
+      get { return impactClaimId_; }
+      set {
+        impactClaimId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "checkpoint_id" field.</summary>
-    public const int CheckpointIdFieldNumber = 1;
+    public const int CheckpointIdFieldNumber = 2;
     private string checkpointId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11963,9 +11980,9 @@ namespace Verra.Ccs.ExtensionSet {
     }
 
     /// <summary>Field number for the "exceptions" field.</summary>
-    public const int ExceptionsFieldNumber = 2;
+    public const int ExceptionsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException> _repeated_exceptions_codec
-        = pb::FieldCodec.ForMessage(18, global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException.Parser);
     private readonly pbc::RepeatedField<global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException> exceptions_ = new pbc::RepeatedField<global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceException>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11988,6 +12005,7 @@ namespace Verra.Ccs.ExtensionSet {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ImpactClaimId != other.ImpactClaimId) return false;
       if (CheckpointId != other.CheckpointId) return false;
       if(!exceptions_.Equals(other.exceptions_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -11997,6 +12015,7 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ImpactClaimId.Length != 0) hash ^= ImpactClaimId.GetHashCode();
       if (CheckpointId.Length != 0) hash ^= CheckpointId.GetHashCode();
       hash ^= exceptions_.GetHashCode();
       if (_unknownFields != null) {
@@ -12017,8 +12036,12 @@ namespace Verra.Ccs.ExtensionSet {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CheckpointId.Length != 0) {
+      if (ImpactClaimId.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(ImpactClaimId);
+      }
+      if (CheckpointId.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(CheckpointId);
       }
       exceptions_.WriteTo(output, _repeated_exceptions_codec);
@@ -12032,8 +12055,12 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CheckpointId.Length != 0) {
+      if (ImpactClaimId.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(ImpactClaimId);
+      }
+      if (CheckpointId.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(CheckpointId);
       }
       exceptions_.WriteTo(ref output, _repeated_exceptions_codec);
@@ -12047,6 +12074,9 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ImpactClaimId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ImpactClaimId);
+      }
       if (CheckpointId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CheckpointId);
       }
@@ -12062,6 +12092,9 @@ namespace Verra.Ccs.ExtensionSet {
     public void MergeFrom(CheckpointNonConformanceRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.ImpactClaimId.Length != 0) {
+        ImpactClaimId = other.ImpactClaimId;
       }
       if (other.CheckpointId.Length != 0) {
         CheckpointId = other.CheckpointId;
@@ -12087,10 +12120,14 @@ namespace Verra.Ccs.ExtensionSet {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            CheckpointId = input.ReadString();
+            ImpactClaimId = input.ReadString();
             break;
           }
           case 18: {
+            CheckpointId = input.ReadString();
+            break;
+          }
+          case 26: {
             exceptions_.AddEntriesFrom(input, _repeated_exceptions_codec);
             break;
           }
@@ -12114,10 +12151,14 @@ namespace Verra.Ccs.ExtensionSet {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            CheckpointId = input.ReadString();
+            ImpactClaimId = input.ReadString();
             break;
           }
           case 18: {
+            CheckpointId = input.ReadString();
+            break;
+          }
+          case 26: {
             exceptions_.AddEntriesFrom(ref input, _repeated_exceptions_codec);
             break;
           }
@@ -12163,7 +12204,9 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CheckpointNonConformanceMitigationResponse(CheckpointNonConformanceMitigationResponse other) : this() {
+      impactClaimId_ = other.impactClaimId_;
       checkpointId_ = other.checkpointId_;
+      checkpointDeferred_ = other.checkpointDeferred_;
       mitigations_ = other.mitigations_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -12174,8 +12217,23 @@ namespace Verra.Ccs.ExtensionSet {
       return new CheckpointNonConformanceMitigationResponse(this);
     }
 
+    /// <summary>Field number for the "impact_claim_id" field.</summary>
+    public const int ImpactClaimIdFieldNumber = 1;
+    private string impactClaimId_ = "";
+    /// <summary>
+    ///id of the impact claim with the exception
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ImpactClaimId {
+      get { return impactClaimId_; }
+      set {
+        impactClaimId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "checkpoint_id" field.</summary>
-    public const int CheckpointIdFieldNumber = 1;
+    public const int CheckpointIdFieldNumber = 2;
     private string checkpointId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12186,10 +12244,25 @@ namespace Verra.Ccs.ExtensionSet {
       }
     }
 
+    /// <summary>Field number for the "checkpoint_deferred" field.</summary>
+    public const int CheckpointDeferredFieldNumber = 3;
+    private bool checkpointDeferred_;
+    /// <summary>
+    ///indicates if the checkpoint was deferred to the next claim period
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool CheckpointDeferred {
+      get { return checkpointDeferred_; }
+      set {
+        checkpointDeferred_ = value;
+      }
+    }
+
     /// <summary>Field number for the "mitigations" field.</summary>
-    public const int MitigationsFieldNumber = 2;
+    public const int MitigationsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation> _repeated_mitigations_codec
-        = pb::FieldCodec.ForMessage(18, global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation.Parser);
     private readonly pbc::RepeatedField<global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation> mitigations_ = new pbc::RepeatedField<global::Verra.Ccs.ExtensionSet.CheckpointNonConformanceExceptionMitigation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12212,7 +12285,9 @@ namespace Verra.Ccs.ExtensionSet {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ImpactClaimId != other.ImpactClaimId) return false;
       if (CheckpointId != other.CheckpointId) return false;
+      if (CheckpointDeferred != other.CheckpointDeferred) return false;
       if(!mitigations_.Equals(other.mitigations_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -12221,7 +12296,9 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ImpactClaimId.Length != 0) hash ^= ImpactClaimId.GetHashCode();
       if (CheckpointId.Length != 0) hash ^= CheckpointId.GetHashCode();
+      if (CheckpointDeferred != false) hash ^= CheckpointDeferred.GetHashCode();
       hash ^= mitigations_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -12241,9 +12318,17 @@ namespace Verra.Ccs.ExtensionSet {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CheckpointId.Length != 0) {
+      if (ImpactClaimId.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(ImpactClaimId);
+      }
+      if (CheckpointId.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(CheckpointId);
+      }
+      if (CheckpointDeferred != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(CheckpointDeferred);
       }
       mitigations_.WriteTo(output, _repeated_mitigations_codec);
       if (_unknownFields != null) {
@@ -12256,9 +12341,17 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CheckpointId.Length != 0) {
+      if (ImpactClaimId.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(ImpactClaimId);
+      }
+      if (CheckpointId.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(CheckpointId);
+      }
+      if (CheckpointDeferred != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(CheckpointDeferred);
       }
       mitigations_.WriteTo(ref output, _repeated_mitigations_codec);
       if (_unknownFields != null) {
@@ -12271,8 +12364,14 @@ namespace Verra.Ccs.ExtensionSet {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ImpactClaimId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ImpactClaimId);
+      }
       if (CheckpointId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CheckpointId);
+      }
+      if (CheckpointDeferred != false) {
+        size += 1 + 1;
       }
       size += mitigations_.CalculateSize(_repeated_mitigations_codec);
       if (_unknownFields != null) {
@@ -12287,8 +12386,14 @@ namespace Verra.Ccs.ExtensionSet {
       if (other == null) {
         return;
       }
+      if (other.ImpactClaimId.Length != 0) {
+        ImpactClaimId = other.ImpactClaimId;
+      }
       if (other.CheckpointId.Length != 0) {
         CheckpointId = other.CheckpointId;
+      }
+      if (other.CheckpointDeferred != false) {
+        CheckpointDeferred = other.CheckpointDeferred;
       }
       mitigations_.Add(other.mitigations_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -12311,10 +12416,18 @@ namespace Verra.Ccs.ExtensionSet {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            CheckpointId = input.ReadString();
+            ImpactClaimId = input.ReadString();
             break;
           }
           case 18: {
+            CheckpointId = input.ReadString();
+            break;
+          }
+          case 24: {
+            CheckpointDeferred = input.ReadBool();
+            break;
+          }
+          case 34: {
             mitigations_.AddEntriesFrom(input, _repeated_mitigations_codec);
             break;
           }
@@ -12338,10 +12451,18 @@ namespace Verra.Ccs.ExtensionSet {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            CheckpointId = input.ReadString();
+            ImpactClaimId = input.ReadString();
             break;
           }
           case 18: {
+            CheckpointId = input.ReadString();
+            break;
+          }
+          case 24: {
+            CheckpointDeferred = input.ReadBool();
+            break;
+          }
+          case 34: {
             mitigations_.AddEntriesFrom(ref input, _repeated_mitigations_codec);
             break;
           }
