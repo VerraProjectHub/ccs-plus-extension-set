@@ -321,13 +321,16 @@ message CheckpointNonConformanceExceptionMitigation{
 }
 
 message CheckpointNonConformanceRequest{
-  string checkpoint_id = 1;
-  repeated CheckpointNonConformanceException exceptions = 2;
+  string impact_claim_id = 1; //id of the impact claim with the exception
+  string checkpoint_id = 2;
+  repeated CheckpointNonConformanceException exceptions = 3;
 }
 
 message CheckpointNonConformanceMitigationResponse{
-  string checkpoint_id = 1;
-  repeated CheckpointNonConformanceExceptionMitigation mitigations = 2;
+  string impact_claim_id = 1; //id of the impact claim with the exception
+  string checkpoint_id = 2;
+  bool checkpoint_deferred = 3; //indicates if the checkpoint was deferred to the next claim period
+  repeated CheckpointNonConformanceExceptionMitigation mitigations = 4;
 }
 
 

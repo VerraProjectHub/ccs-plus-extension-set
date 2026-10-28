@@ -1176,6 +1176,9 @@ export namespace CheckpointNonConformanceExceptionMitigation {
 }
 
 export class CheckpointNonConformanceRequest extends jspb.Message {
+  getImpactClaimId(): string;
+  setImpactClaimId(value: string): void;
+
   getCheckpointId(): string;
   setCheckpointId(value: string): void;
 
@@ -1196,14 +1199,21 @@ export class CheckpointNonConformanceRequest extends jspb.Message {
 
 export namespace CheckpointNonConformanceRequest {
   export type AsObject = {
+    impactClaimId: string,
     checkpointId: string,
     exceptionsList: Array<CheckpointNonConformanceException.AsObject>,
   }
 }
 
 export class CheckpointNonConformanceMitigationResponse extends jspb.Message {
+  getImpactClaimId(): string;
+  setImpactClaimId(value: string): void;
+
   getCheckpointId(): string;
   setCheckpointId(value: string): void;
+
+  getCheckpointDeferred(): boolean;
+  setCheckpointDeferred(value: boolean): void;
 
   clearMitigationsList(): void;
   getMitigationsList(): Array<CheckpointNonConformanceExceptionMitigation>;
@@ -1222,7 +1232,9 @@ export class CheckpointNonConformanceMitigationResponse extends jspb.Message {
 
 export namespace CheckpointNonConformanceMitigationResponse {
   export type AsObject = {
+    impactClaimId: string,
     checkpointId: string,
+    checkpointDeferred: boolean,
     mitigationsList: Array<CheckpointNonConformanceExceptionMitigation.AsObject>,
   }
 }
