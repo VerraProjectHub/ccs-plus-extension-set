@@ -137,7 +137,7 @@
         "description": "This extension is used to track the status of a processed claim's submission through the Verra reporting and issuance lifecycle.",
         "documentation": "",
         "extensionContext": "ProcessedClaim",
-        "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.VerraClaimTracking",
+        "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.VerraClaimTracking",
         "dataExample": "{}",
         "modules": [
             "VM0049"
@@ -150,7 +150,7 @@
       "description": "This extension is used to record the Monitoring Report submitted for the Processed Claim.",
       "documentation": "",
       "extensionContext": "ProcessedClaim",
-      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.MonitoringReportResponse",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.MonitoringReportResponse",
       "dataExample": "{}",
       "modules": [
         "VM0049"
@@ -163,7 +163,7 @@
       "description": "This extension is used to record the Verification Report submitted for the Processed Claim.",
       "documentation": "",
       "extensionContext": "ProcessedClaim",
-      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.VerificationReportResponse",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.VerificationReportResponse",
       "dataExample": "{}",
       "modules": [
         "VM0049"
@@ -176,7 +176,7 @@
       "description": "This extension is used to record the calculation results returned by the Verra DMRV API.",
       "documentation": "",
       "extensionContext": "ProcessedClaim",
-      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.CalculateErrResponse",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.CalculateErrResponse",
       "dataExample": "{}",
       "modules": [
         "VM0049"
@@ -189,7 +189,7 @@
       "description": "This extension is used to record the Verra credit issuance metadata.",
       "documentation": "",
       "extensionContext": "ProcessedClaim",
-      "dataSchemaOrType": "Verra.Ccs.Reporting.Model.Api.Responses.CreditIssuanceResponse",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.CreditIssuanceResponse",
       "dataExample": "{}",
       "modules": [
         "VM0049"

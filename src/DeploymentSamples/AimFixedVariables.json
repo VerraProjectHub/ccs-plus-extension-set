@@ -1,4 +1,10 @@
 {
-  "aimFixedVariables": [
+  "aimWithFixedVariablesInits": [
+    {
+        "projectModuleName": "ModuleName",
+        "aioId": "00000000-0000-0000-0000-000000000000",
+        "aimId": "00000000-0000-0000-0000-000000000000",
+        "aimFixedVariables": []
+    }
   ]
 }
