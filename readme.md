@@ -45,6 +45,92 @@ The model types for other platforms can be found in [models](./src/models/), cur
 
 Documentation starts with the [dMRV Framework](https://interworkalliance.github.io/TokenTaxonomyFramework/dmrv/spec/v4/index.html), which provides the foundational concepts and specifications for implementing digital MRV (Measurement, Reporting, and Verification) systems.
 
+[Deployment Samples](./src/DeploymentSamples/readme.md) provide guidance on implementing the Master Entity Extension Templates in various environments.
+
+### Implementation Adjustments for Master Entity Extension Templates
+
+Because you may want to customize and have advanced serialization features for some of the Verra DMRV API, you will need to create implementation classes or types for the following:
+
+- Verra Claim Tracking
+- Verra Monitoring Report
+- Verra Verification Report
+- Verra Calculate Err Result
+- Verra Credit Result
+
+Based on how you want to track the state of your reporting with Verra, you will want to create a `Tracker` to record your interactions and the status of each processed claim throughout the Verra reporting and issuance lifecycle. You can choose to create a custom type in the [Protos](./src/Protos/verraCcsExtensionSet.proto) file, which will allow you to define the structure and serialization behavior for your tracking data.
+
+Similar for the Monitoring Report, Verification Report, Calculate Err Result, and Credit Result, you may want to create extended types from the DMRV API to add conversion logic, custom serialization, or additional fields specific to your implementation needs.
+
+When you do, you will need to update the corresponding extension definitions to reference your custom types `dataSchemaOrType`, ensuring that the DMRV framework can correctly interpret and process your extended data structures.
+
+```json
+{
+        "id": "88235b19-d674-4bbd-b918-36c42aeb2543",
+        "name": "Verra Claim Tracking",
+        "version": "1.0.0",
+        "description": "This extension is used to track the status of a processed claim's submission through the Verra reporting and issuance lifecycle.",
+        "documentation": "",
+        "extensionContext": "ProcessedClaim",
+        "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.VerraClaimTracking",
+        "dataExample": "{}",
+        "modules": [
+            "VM0049"
+        ]
+    },
+    {
+      "id": "6cd8d98b-4449-4bf3-bf1d-91cac429383a",
+      "name": "Verra Monitoring Report",
+      "version": "1.0.0",
+      "description": "This extension is used to record the Monitoring Report submitted for the Processed Claim.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.MonitoringReportResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "5869c637-ba77-42ff-98ee-d52acdf1428f",
+      "name": "Verra Verification Report",
+      "version": "1.0.0",
+      "description": "This extension is used to record the Verification Report submitted for the Processed Claim.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.VerificationReportResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "871ce3de-e79b-4598-8f6b-1b9ba27a800b",
+      "name": "Verra Calculate Err Result",
+      "version": "1.0.0",
+      "description": "This extension is used to record the calculation results returned by the Verra DMRV API.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.CalculateErrResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    },
+    {
+      "id": "3c389afe-a32f-4e05-b896-7ff79b15ced3",
+      "name": "Verra Credit Result",
+      "version": "1.0.0",
+      "description": "This extension is used to record the Verra credit issuance metadata.",
+      "documentation": "",
+      "extensionContext": "ProcessedClaim",
+      "dataSchemaOrType": "Ecs.Tools.Verra.Ccs.Reporting.Model.Api.Responses.CreditIssuanceResponse",
+      "dataExample": "{}",
+      "modules": [
+        "VM0049"
+      ]
+    }
+```
+
 - **[Deployment Samples](./src/DeploymentSamples/readme.md)** - Deployment guide and basic usage using ECS as an example environment.
 
 ### Verra CCS+ Modules
@@ -62,7 +148,7 @@ Documentation starts with the [dMRV Framework](https://interworkalliance.github.
 
 ## Requirements
 
-- .NET 10.0 or later
+- .NET 11.0 or later
 - Microsoft Environmental Credit Service access,contact [EarthXCG](https://www.earthxcg.com)
 - [ECS SDK](https://github.com/earthxcg-oxy/ecssdk)
 
