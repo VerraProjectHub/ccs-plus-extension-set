@@ -28,16 +28,16 @@ All template definitions are wrappers for custom data types that can vary based 
     }
 ```
 
-- [Master Variable Templates](../src/Ccs.Plus.ExtensionSet/VariableTemplates.json): Variable templates are used to define the methodology module parameters that are required for reporting and formula calculations. These have fixed identifiers and should be installed second. VariableTemplates represent the variables or parameters that are required for monitoring and reporting in a methodology module and are the most frequently used template type. They are use in defining ClaimSources, CheckpointTemplates and CheckpointRoutingTables, thus a naming convention that is easily understood by project proponents is recommended. The Id is a composite key that includes the `Id` and the `Version` so that multiple versions of a variable template can be defined if the parameter definition changes over time. It is recommended that the `Id` be a string, minus special characters like commas or spaces, that represents the parameter name used in the methodology documentation and that the `Version` include the `ModuleName` followed by a `:` and the version number, e.g., `VM0049:1.0`. If a variable template is updated, a new version should be created with the same `Id` but a different `Version`. When a ClaimSource, CheckpointTemplate or FormulaTemplate references a VariableTemplate, it should reference the specific version required. Below is an example of a VariableTemplate definition for the `FRmass,x` parameter used in the `VM0049` module.
+- [Master Variable Templates](../src/Ccs.Plus.ExtensionSet/VariableTemplates.json): Variable templates are used to define the methodology module parameters that are required for reporting and formula calculations. These have fixed identifiers and should be installed second. VariableTemplates represent the variables or parameters that are required for monitoring and reporting in a methodology module and are the most frequently used template type. They are use in defining ClaimSources, CheckpointTemplates and CheckpointRoutingTables, thus a naming convention that is easily understood by project proponents is recommended. The Id is a composite key that includes the `Id`, `Module` and the `Version` so that multiple versions of a variable template can be defined if the parameter definition changes over time. It is recommended that the `Id` be a string, minus special characters like commas or spaces, that represents the parameter name used in the methodology documentation and that the `ModuleName` is either the Methodology name if it doesn't multiple modules or the methodology module name like `Capture`. `Version` should be a number version like `1.0`. If a variable template is updated, a new version should be created with the same `Id` and `Module` but a different `Version`. When a ClaimSource, CheckpointTemplate or FormulaTemplate references a VariableTemplate, it should reference the specific version required. Below is an example of a VariableTemplate definition for the `FRmass,x` parameter used in the `VM0049` module.
 
 ```json
     {
       "id": "Frmassx",
+      "module": "VM0049",
+      "version": "1.0",
       "name": "FRmass,x",
       "description": "Total mass flow measured by mass flow meter x during the monitoring period. This maps to the Verra TotalMassFlow parameter.",
       "documentation": "inherited",
-      "alias": "",
-      "version": "VM0049:1.0",
       "dataSchemaOrType": "ccs.extensionSet.DoubleValue",
       "dataExample": "{ \"value\": 0.0, \"uOM\": \"tonnes\" }",
       "suggestedUnit": "tonnes",
@@ -54,15 +54,16 @@ All template definitions are wrappers for custom data types that can vary based 
     }
 ```
 
-- [Master Formula Templates](../src/Ccs.Plus.ExtensionSet/MasterFormulaTemplates.json): Formula templates are used to define the methodology module equations that have references to the variable templates that are required for calculation. These have fixed identifiers and are installed third.
+- [Master Formula Templates](../src/Ccs.Plus.ExtensionSet/MasterFormulaTemplates.json): Formula templates are used to define the methodology module equations that have references to the variable templates that are required for calculation. These have fixed composite identifiers, `Id`, `Module` and `Version` and are installed third.
 
 ```json
 {
-      "id": "7c90069b-911a-4604-9b80-0a907c8d8c84",
+      "id": "Equation-1",
+      "module": "VM0049",
+      "version": "1.0",
       "name": "VM0049 Measurement based on Total Mass Flow. Equation 1, option 1 - Equation 2",
       "description": "To determine the quantity of CO2 using total mass flow measurements, the project proponent must multiply the total mass flow by the concentration of CO2 in that flow.",
       "documentation": "inherited",
-      "version": "1.0",
       "dataSchemaOrType": "ccs.extensionSet.QuantityOfCo2InjectedFormula",
       "dataExample": "{}",
       "formula": "QCO2,x = FRmass,x × %CO2mass,x",
@@ -196,12 +197,14 @@ For common libraries like the Project Design Document (PDD) or Emission Factor l
   "variableTemplates": [
     {
       "variableTemplateId": "tAlpha10",
-      "reportingModule": "VM0049:1.0",
+      "variableTemplateModule": "VM0049",
+      "variableTemplateVersion": "1.0",
       "sourceIdentifier": "PDD:tAlpha10"
     },
     {
       "variableTemplateId": "tAlpha66",
-      "reportingModule": "VM0049:1.0",
+      "variableTemplateModule": "VM0049",
+      "variableTemplateVersion": "1.0",
       "sourceIdentifier": "PDD:tAlpha66"
     }
   ]
@@ -226,26 +229,23 @@ Below is an example of a Checkpoint Template that includes three variable templa
 
 ```json
 {
-    "checkpointTemplates": [
+    "aimCheckpointTemplates": [
         {
             "name": "Daily Checkpoint Template",
             "description": "A default template for checkpoints.",
             "cadence": "Daily",
-            "variableTemplates": [              
-                {
-                    "variableTemplateId": "Vm",
-                    "variableTemplateVersion": "VMD0056:1.0",
-                    "sourceIdentifier": "sensor: x104-vm"
-                },
+            "variableTemplates": [
                 {
                     "variableTemplateId": "QCO2nonVCSinjectediy",
-                    "variableTemplateVersion": "VM0049:1.0",
-                    "sourceIdentifier": "flowMeter: dac202"
+                    "variableTemplateModule": "VM0049",
+                    "variableTemplateVersion": "1.0",
+                    "sourceIdentifier": "param:102"
                 },
                 {
                     "variableTemplateId": "FRmassx",
-                    "variableTemplateVersion": "VM0049:1.0",
-                    "sourceIdentifier": "flowMeter: dac202:param19"
+                    "variableTemplateModule": "VM0049",
+                    "variableTemplateVersion": "1.0",
+                    "sourceIdentifier": "param:77"
                 }
             ]
         }
@@ -389,6 +389,7 @@ private async Task AddClaimSourceVariableTemplates(ClaimSource source)
         var moduleId = moduleIds.FirstOrDefault(m => variableTemplate.VariableTemplateVersion.StartsWith(m.Name)).Id;
         var variableTemplateResponse =
             variableTemplates.FirstOrDefault(v => v.Id == variableTemplate.VariableTemplateId
+                                                    && v.ModuleId == moduleId
                                                     && v.Version == variableTemplate.VariableTemplateVersion
                                                     && v.ExtensionSetModuleId == moduleId);
 
@@ -499,6 +500,7 @@ foreach (var checkpointTemplate in checkpointTemplatesInit.CheckpointTemplates)
             var variableTemplateRequest = new ClaimSourceVariableTemplateRequest
             {
                 VariableTemplateId = variableTemplate.VariableTemplateId,
+                VariableTemplateModule = variableTemplate.VariableTemplateModule,
                 SourceIdentifier = variableTemplate.SourceIdentifier,
                 VariableTemplateVersion = variableTemplate.VariableTemplateVersion,
                 ExtensionSetModuleId = moduleId

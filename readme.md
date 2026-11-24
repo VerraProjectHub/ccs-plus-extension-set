@@ -37,7 +37,7 @@ The content of this repository is organized into several key components, each se
 
 The Master Extension Set itself is defined using Json templates and user-defined types specified in protobufs, which are then compiled into various platform-specific libraries for use in template instances.
 
-Deployment tools can be found in the [ECSSDK - ADD NEW PATH HERE](https://github.com/marleygoxy/ecssdk) to be cloned.
+Deployment tools can be found in the [EcsSdk](https://github.com/earthxcg-oxy/ecssdk) to be cloned.
 
 The model types for other platforms can be found in [models](./src/models/), currently Javascript and TypeScript are support, please use Issues to request other platforms you need like Java, Go, etc.
 

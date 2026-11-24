@@ -1,5 +1,5 @@
 {
-    "checkpointTemplates": [
+    "aimCheckpointTemplates": [
         {
             "name": "Daily Checkpoint Template",
             "description": "A default template for checkpoints.",
@@ -7,12 +7,14 @@
             "variableTemplates": [
                 {
                     "variableTemplateId": "QCO2nonVCSinjectediy",
-                    "variableTemplateVersion": "VM0049:1.0",
+                    "variableTemplateModule": "VM0049",
+                    "variableTemplateVersion": "1.0",
                     "sourceIdentifier": "param:102"
                 },
                 {
                     "variableTemplateId": "FRmassx",
-                    "variableTemplateVersion": "VM0049:1.0",
+                    "variableTemplateModule": "VM0049",
+                    "variableTemplateVersion": "1.0",
                     "sourceIdentifier": "param:77"
                 }
             ]
@@ -24,17 +26,20 @@
             "variableTemplates": [
                 {
                     "variableTemplateId": "EFNGN2Od",
-                    "variableTemplateVersion": "VMD0056:1.0",
+                    "variableTemplateModule": "VMD0056",
+                    "variableTemplateVersion": "1.0",
                     "sourceIdentifier": "PDD:EFNGN2Od:VMD0056:1.0"
                 },
                 {
                     "variableTemplateId": "EFNGCH4d",
-                    "variableTemplateVersion": "VMD0056:1.0",
+                    "variableTemplateModule": "VMD0056",
+                    "variableTemplateVersion": "1.0",
                     "sourceIdentifier": "PDD:EFNGCH4d:VMD0056:1.0"
                 },
                 {
                     "variableTemplateId": "QCO2x",
-                    "variableTemplateVersion": "VM0049:1.0",
+                    "variableTemplateModule": "VM0049",
+                    "variableTemplateVersion": "1.0",
                     "sourceIdentifier": "param:102"
                 }
             ]
